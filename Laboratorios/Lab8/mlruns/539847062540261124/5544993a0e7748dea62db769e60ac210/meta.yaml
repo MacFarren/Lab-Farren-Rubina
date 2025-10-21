@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/tamarafarren/Documents/GitHub/Lab-Farren-Rubina/Laboratorios/Lab8/mlruns/539847062540261124/5544993a0e7748dea62db769e60ac210/artifacts
+end_time: 1761018912314
+entry_point_name: ''
+experiment_id: '539847062540261124'
+lifecycle_stage: active
+run_id: 5544993a0e7748dea62db769e60ac210
+run_name: trial_015
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1761018909714
+status: 3
+tags: []
+user_id: tamarafarren

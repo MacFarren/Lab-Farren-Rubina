@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+*.ipynb_checkpoints/
+.ipynb_checkpoints/
+.venv/
+.env
+.git/
+.gitignore
+Dockerfile
+README.md
+
+mlruns/
+models/
+plots/

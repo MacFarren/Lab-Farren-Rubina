@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/tamarafarren/Documents/GitHub/Lab-Farren-Rubina/Laboratorios/Lab8/mlruns/539847062540261124/0b59bac91c9041aba671bb9c0ce0ff16/artifacts
+end_time: 1761018950780
+entry_point_name: ''
+experiment_id: '539847062540261124'
+lifecycle_stage: active
+run_id: 0b59bac91c9041aba671bb9c0ce0ff16
+run_name: optuna_study_parent
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1761018871164
+status: 3
+tags: []
+user_id: tamarafarren

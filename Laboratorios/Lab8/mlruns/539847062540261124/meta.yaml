@@ -1,0 +1,6 @@
+artifact_location: file:///Users/tamarafarren/Documents/GitHub/Lab-Farren-Rubina/Laboratorios/Lab8/mlruns/539847062540261124
+creation_time: 1761018871033
+experiment_id: '539847062540261124'
+last_update_time: 1761018871033
+lifecycle_stage: active
+name: xgboost_optuna_waterpotability_20251021-005431

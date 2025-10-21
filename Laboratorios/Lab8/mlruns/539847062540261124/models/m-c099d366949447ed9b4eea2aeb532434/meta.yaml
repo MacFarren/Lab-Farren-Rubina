@@ -1,0 +1,10 @@
+artifact_location: file:///Users/tamarafarren/Documents/GitHub/Lab-Farren-Rubina/Laboratorios/Lab8/mlruns/539847062540261124/models/m-c099d366949447ed9b4eea2aeb532434/artifacts
+creation_timestamp: 1761018871653
+experiment_id: '539847062540261124'
+last_updated_timestamp: 1761018874354
+model_id: m-c099d366949447ed9b4eea2aeb532434
+model_type: null
+name: model
+source_run_id: 4645c0ac5f744cae9958c1175da7720a
+status: 2
+status_message: null
