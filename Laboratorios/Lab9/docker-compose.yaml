@@ -1,0 +1,19 @@
+﻿version: '3.8'
+services:
+  airflow:
+    image: apache/airflow:2.6.3
+    restart: always
+    user: root
+    environment:
+      - AIRFLOW__CORE__EXECUTOR=SequentialExecutor
+      - AIRFLOW__CORE__LOAD_EXAMPLES=False
+      - AIRFLOW__API__AUTH_BACKENDS=airflow.api.auth.backend.basic_auth
+    volumes:
+      - ./:/opt/airflow   # monta tu carpeta de proyecto en /opt/airflow del contenedor
+    ports:
+      - "8080:8080"
+      - "7860:7860"    # Puerto para Gradio
+      - "7862:7862"    # Puerto adicional para Gradio
+      - "7863:7863"    # Puerto para interface final
+      - "7864:7864"    # Puerto final Gradio
+    command: bash -c "apt-get update && apt-get install -y curl && pip install -r /opt/airflow/requirements.txt || true && airflow db upgrade || true && airflow users create --username admin --firstname Admin --lastname User --role Admin --email admin@example.com --password admin || true && airflow standalone"
