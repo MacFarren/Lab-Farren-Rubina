@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SodAI Drinks - Sistema de Recomendaciones MLOps</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            font-size: 1.2em;
+            opacity: 0.8;
+            margin-bottom: 40px;
+        }
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .service-card {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        .service-card h3 {
+            margin-top: 0;
+            color: #fff;
+        }
+        .service-card a {
+            display: inline-block;
+            background: #fff;
+            color: #667eea;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: all 0.3s;
+        }
+        .service-card a:hover {
+            background: #f0f0f0;
+            transform: scale(1.05);
+        }
+        .demo-section {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 30px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .demo-form {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        .demo-form input {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            flex: 1;
+            min-width: 150px;
+        }
+        .demo-form button {
+            padding: 10px 20px;
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .demo-form button:hover {
+            background: #ff5252;
+        }
+        #recommendations {
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+        .status {
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .status.online {
+            background: rgba(76, 175, 80, 0.3);
+            border-left: 4px solid #4CAF50;
+        }
+        .status.loading {
+            background: rgba(255, 193, 7, 0.3);
+            border-left: 4px solid #FFC107;
+        }
+        .status.error {
+            background: rgba(244, 67, 54, 0.3);
+            border-left: 4px solid #F44336;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🥤 SodAI Drinks</h1>
+        <p class="subtitle">Sistema MLOps de Recomendaciones de Bebidas</p>
+        
+        <div class="services">
+            <div class="service-card">
+                <h3>🔄 Airflow Pipeline</h3>
+                <p>Pipeline automatizado de ML con Apache Airflow para extracción de datos, ingeniería de características, entrenamiento y evaluación de modelos.</p>
+                <a href="http://localhost:8080" target="_blank">Abrir Airflow</a>
+                <div id="airflow-status" class="status loading">Verificando estado...</div>
+            </div>
+            
+            <div class="service-card">
+                <h3>🚀 API de Recomendaciones</h3>
+                <p>REST API para obtener recomendaciones de productos personalizadas basadas en el comportamiento de compra.</p>
+                <a href="http://localhost:8000/docs" target="_blank">Documentación API</a>
+                <div id="api-status" class="status loading">Verificando estado...</div>
+            </div>
+            
+            <div class="service-card">
+                <h3>📊 Información de Datos</h3>
+                <p>Visualización de estadísticas y muestras de los datasets de transacciones, clientes y productos.</p>
+                <a href="http://localhost:8000/data/info" target="_blank">Ver Datos</a>
+                <div id="data-status" class="status loading">Verificando estado...</div>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h3>🎯 Demo de Recomendaciones</h3>
+            <p>Ingresa un ID de cliente para obtener recomendaciones personalizadas:</p>
+            
+            <div class="demo-form">
+                <input type="number" id="customer-id" placeholder="ID del Cliente (ej: 256017)" value="256017">
+                <input type="number" id="top-k" placeholder="Número de recomendaciones" value="5" min="1" max="10">
+                <button onclick="getRecommendations()">Obtener Recomendaciones</button>
+            </div>
+            
+            <div id="recommendations"></div>
+        </div>
+
+        <div class="status">
+            <h4>🏗️ Arquitectura del Sistema</h4>
+            <p><strong>Frontend:</strong> Interface web para demostración</p>
+            <p><strong>Backend:</strong> FastAPI con endpoints de recomendación</p>
+            <p><strong>Pipeline:</strong> Apache Airflow para automatización MLOps</p>
+            <p><strong>Base de Datos:</strong> PostgreSQL para metadatos de Airflow</p>
+            <p><strong>Datos:</strong> Archivos Parquet (transacciones, clientes, productos)</p>
+        </div>
+    </div>
+
+    <script>
+        // Verificar estado de servicios
+        async function checkServiceStatus(url, statusElementId) {
+            try {
+                const response = await fetch(url);
+                const statusElement = document.getElementById(statusElementId);
+                if (response.ok) {
+                    statusElement.className = 'status online';
+                    statusElement.textContent = '✅ Servicio en línea';
+                } else {
+                    statusElement.className = 'status error';
+                    statusElement.textContent = '❌ Servicio no disponible';
+                }
+            } catch (error) {
+                const statusElement = document.getElementById(statusElementId);
+                statusElement.className = 'status error';
+                statusElement.textContent = '❌ Error de conexión';
+            }
+        }
+
+        // Obtener recomendaciones
+        async function getRecommendations() {
+            const customerId = document.getElementById('customer-id').value;
+            const topK = document.getElementById('top-k').value;
+            const recommendationsDiv = document.getElementById('recommendations');
+            
+            if (!customerId) {
+                recommendationsDiv.innerHTML = '<p style="color: #ff6b6b;">Por favor ingresa un ID de cliente válido.</p>';
+                return;
+            }
+
+            recommendationsDiv.innerHTML = '<p>🔄 Obteniendo recomendaciones...</p>';
+            
+            try {
+                const response = await fetch(`http://localhost:8000/recommend/${customerId}?top_k=${topK}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    
+                    if (data.error) {
+                        recommendationsDiv.innerHTML = `<p style="color: #ff6b6b;">Error: ${data.error}</p>`;
+                    } else {
+                        let html = `
+                            <h4>🎯 Recomendaciones para Cliente ${data.customer_id}</h4>
+                            <p><strong>Algoritmo:</strong> ${data.algorithm}</p>
+                            <p><strong>Generado:</strong> ${new Date(data.timestamp).toLocaleString()}</p>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 20px;">
+                        `;
+                        
+                        data.recommendations.forEach((product, index) => {
+                            html += `
+                                <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px;">
+                                    <h5 style="margin: 0 0 10px 0; color: #fff;">#${index + 1} - ID: ${product.product_id || 'N/A'}</h5>
+                                    <p style="margin: 5px 0;"><strong>Nombre:</strong> ${product.name || 'Producto'}</p>
+                                    <p style="margin: 5px 0;"><strong>Categoría:</strong> ${product.category || 'N/A'}</p>
+                                    <p style="margin: 5px 0;"><strong>Precio:</strong> $${product.price || 'N/A'}</p>
+                                </div>
+                            `;
+                        });
+                        
+                        html += '</div>';
+                        recommendationsDiv.innerHTML = html;
+                    }
+                } else {
+                    recommendationsDiv.innerHTML = '<p style="color: #ff6b6b;">Error al obtener recomendaciones. Verifica que la API esté ejecutándose.</p>';
+                }
+            } catch (error) {
+                recommendationsDiv.innerHTML = `<p style="color: #ff6b6b;">Error de conexión: ${error.message}</p>`;
+            }
+        }
+
+        // Verificar servicios al cargar la página
+        window.addEventListener('load', function() {
+            checkServiceStatus('http://localhost:8000/health', 'api-status');
+            checkServiceStatus('http://localhost:8000/data/info', 'data-status');
+            checkServiceStatus('http://localhost:8080', 'airflow-status');
+        });
+    </script>
+</body>
+</html>

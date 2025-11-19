@@ -1,0 +1,2912 @@
+{
+  "run_id": "20251113_195814",
+  "data_stats": {
+    "extraction_timestamp": "2025-11-13T17:59:16.860406",
+    "data_path": "/opt/airflow/data",
+    "validation_passed": true,
+    "errors": [],
+    "transacciones": {
+      "shape": [
+        15000,
+        5
+      ],
+      "date_range": {
+        "start": "2024-01-01",
+        "end": "2024-12-31"
+      },
+      "unique_customers": 1406,
+      "unique_products": 102,
+      "unique_orders": 13148,
+      "avg_items_per_transaction": 4.422764444444445,
+      "records_removed": 0
+    },
+    "clientes": {
+      "shape": [
+        1569,
+        8
+      ],
+      "unique_customers": 1569,
+      "regions": 1,
+      "zones": 1,
+      "customer_types": 7,
+      "duplicates_removed": 0
+    },
+    "productos": {
+      "shape": [
+        971,
+        7
+      ],
+      "unique_products": 971,
+      "brands": 61,
+      "categories": 2,
+      "segments": 4,
+      "duplicates_removed": 0
+    },
+    "cross_validation": {
+      "missing_customers": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "missing_products": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "coverage": {
+        "customers_with_transactions": 1406,
+        "total_customers": 1569,
+        "products_with_transactions": 102,
+        "total_products": 971
+      }
+    }
+  },
+  "features_stats": {
+    "customer_features_shape": [
+      1406,
+      30
+    ],
+    "product_features_shape": [
+      102,
+      26
+    ],
+    "interaction_features_shape": [
+      8857,
+      16
+    ],
+    "temporal_features_shape": [
+      8857,
+      10
+    ],
+    "final_dataset_shape": [
+      10451,
+      97
+    ],
+    "num_features": 94,
+    "customer_product_pairs": 10451,
+    "positive_interactions": "8857",
+    "negative_interactions": "1594",
+    "preprocessing_applied": true,
+    "pipeline_saved": true
+  },
+  "drift_results": {
+    "detection_timestamp": "2025-11-13T18:00:07.696633",
+    "drift_threshold": 0.1,
+    "tests_performed": [
+      "ks_test",
+      "chi2_test",
+      "psi",
+      "distribution_tests"
+    ],
+    "statistical_tests": {
+      "ks_test_results": {
+        "active_sale_days": {
+          "ks_statistic": 0.1870903718550908,
+          "p_value": 1.0499684948457123e-233,
+          "drift_detected": "True",
+          "effect_size": 0.1870903718550908
+        },
+        "unique_orders": {
+          "ks_statistic": 0.5270854410006438,
+          "p_value": 0.0,
+          "drift_detected": "True",
+          "effect_size": 0.5270854410006438
+        },
+        "interaction_days": {
+          "ks_statistic": 0.5270854410006438,
+          "p_value": 0.0,
+          "drift_detected": "True",
+          "effect_size": 0.5270854410006438
+        },
+        "unique_products_bought": {
+          "ks_statistic": 0.22870325332246055,
+          "p_value": 0.0,
+          "drift_detected": "True",
+          "effect_size": 0.22870325332246055
+        },
+        "location_distance_from_origin": {
+          "ks_statistic": 0.03262948396698906,
+          "p_value": 1.78516629172477e-07,
+          "drift_detected": "True",
+          "effect_size": 0.03262948396698906
+        },
+        "total_items_bought": {
+          "ks_statistic": 0.5270854410006438,
+          "p_value": 0.0,
+          "drift_detected": "True",
+          "effect_size": 0.5270854410006438
+        },
+        "preferred_month": {
+          "ks_statistic": 0.5270854410006438,
+          "p_value": 0.0,
+          "drift_detected": "True",
+          "effect_size": 0.5270854410006438
+        },
+        "week_max": {
+          "ks_statistic": 0.5270854410006438,
+          "p_value": 0.0,
+          "drift_detected": "True",
+          "effect_size": 0.5270854410006438
+        },
+        "total_orders_x": {
+          "ks_statistic": 0.2491572656734059,
+          "p_value": 0.0,
+          "drift_detected": "True",
+          "effect_size": 0.2491572656734059
+        },
+        "region_id_encoded": {
+          "ks_statistic": 0.0,
+          "p_value": 1.0,
+          "drift_detected": "True",
+          "effect_size": 0.0
+        },
+        "std_items_per_transaction_y": {
+          "ks_statistic": 0.19651809073699467,
+          "p_value": 5.099982469285904e-258,
+          "drift_detected": "True",
+          "effect_size": 0.19651809073699467
+        },
+        "product_lifetime_days": {
+          "ks_statistic": 0.14006289222885016,
+          "p_value": 1.0091648803571265e-130,
+          "drift_detected": "True",
+          "effect_size": 0.14006289222885016
+        },
+        "Y": {
+          "ks_statistic": 0.0733493581209056,
+          "p_value": 4.6885181088256576e-36,
+          "drift_detected": "True",
+          "effect_size": 0.0733493581209056
+        },
+        "num_visit_per_week": {
+          "ks_statistic": 0.0,
+          "p_value": 1.0,
+          "drift_detected": "True",
+          "effect_size": 0.0
+        },
+        "region_id": {
+          "ks_statistic": 0.0,
+          "p_value": 1.0,
+          "drift_detected": "True",
+          "effect_size": 0.0
+        },
+        "orders_bebidas_carbonatadas": {
+          "ks_statistic": 0.2491572656734059,
+          "p_value": 0.0,
+          "drift_detected": "True",
+          "effect_size": 0.2491572656734059
+        },
+        "seasonal_span_weeks": {
+          "ks_statistic": 0.5270854410006438,
+          "p_value": 0.0,
+          "drift_detected": "True",
+          "effect_size": 0.5270854410006438
+        },
+        "days_since_first_interaction": {
+          "ks_statistic": 0.5272036934913567,
+          "p_value": 0.0,
+          "drift_detected": "True",
+          "effect_size": 0.5272036934913567
+        },
+        "active_days": {
+          "ks_statistic": 0.2491572656734059,
+          "p_value": 0.0,
+          "drift_detected": "True",
+          "effect_size": 0.2491572656734059
+        },
+        "customer_type_encoded": {
+          "ks_statistic": 0.060048619134008385,
+          "p_value": 2.6767547685399398e-24,
+          "drift_detected": "True",
+          "effect_size": 0.060048619134008385
+        },
+        "purchase_frequency": {
+          "ks_statistic": 0.07344901414684557,
+          "p_value": 3.7502892119171625e-36,
+          "drift_detected": "True",
+          "effect_size": 0.07344901414684557
+        },
+        "unique_customers": {
+          "ks_statistic": 0.30195749759488444,
+          "p_value": 0.0,
+          "drift_detected": "True",
+          "effect_size": 0.30195749759488444
+        },
+        "total_transactions": {
+          "ks_statistic": 0.24649352328451213,
+          "p_value": 0.0,
+          "drift_detected": "True",
+          "effect_size": 0.24649352328451213
+        },
+        "avg_items_per_transaction_y": {
+          "ks_statistic": 0.1637500685450104,
+          "p_value": 8.383956150448056e-179,
+          "drift_detected": "True",
+          "effect_size": 0.1637500685450104
+        },
+        "days_since_first_sale": {
+          "ks_statistic": 0.15836286120247944,
+          "p_value": 3.40023240303055e-167,
+          "drift_detected": "True",
+          "effect_size": 0.15836286120247944
+        },
+        "product_diversity": {
+          "ks_statistic": 0.22772736305178176,
+          "p_value": 0.0,
+          "drift_detected": "True",
+          "effect_size": 0.22772736305178176
+        },
+        "brand_encoded": {
+          "ks_statistic": 0.13159980786263098,
+          "p_value": 2.1459672615394434e-115,
+          "drift_detected": "True",
+          "effect_size": 0.13159980786263098
+        },
+        "days_since_first_purchase": {
+          "ks_statistic": 0.3626170377844965,
+          "p_value": 0.0,
+          "drift_detected": "True",
+          "effect_size": 0.3626170377844965
+        },
+        "X": {
+          "ks_statistic": 0.02807162095265936,
+          "p_value": 1.2097632488287437e-05,
+          "drift_detected": "True",
+          "effect_size": 0.02807162095265936
+        },
+        "unique_categories_bought": {
+          "ks_statistic": 0.0,
+          "p_value": 1.0,
+          "drift_detected": "True",
+          "effect_size": 0.0
+        },
+        "package_encoded": {
+          "ks_statistic": 0.051676276815780575,
+          "p_value": 4.1905404577139236e-18,
+          "drift_detected": "True",
+          "effect_size": 0.051676276815780575
+        },
+        "week_nunique": {
+          "ks_statistic": 0.5270854410006438,
+          "p_value": 0.0,
+          "drift_detected": "True",
+          "effect_size": 0.5270854410006438
+        },
+        "total_items_sold": {
+          "ks_statistic": 0.2987006294809075,
+          "p_value": 0.0,
+          "drift_detected": "True",
+          "effect_size": 0.2987006294809075
+        },
+        "interaction_span_days": {
+          "ks_statistic": 0.5270854410006438,
+          "p_value": 0.0,
+          "drift_detected": "True",
+          "effect_size": 0.5270854410006438
+        },
+        "num_deliver_per_week": {
+          "ks_statistic": 0.03241322846942724,
+          "p_value": 2.2119193853069722e-07,
+          "drift_detected": "True",
+          "effect_size": 0.03241322846942724
+        },
+        "category_encoded": {
+          "ks_statistic": 0.0,
+          "p_value": 1.0,
+          "drift_detected": "True",
+          "effect_size": 0.0
+        },
+        "avg_items_per_interaction": {
+          "ks_statistic": 0.5270854410006438,
+          "p_value": 0.0,
+          "drift_detected": "True",
+          "effect_size": 0.5270854410006438
+        },
+        "std_items_per_interaction": {
+          "ks_statistic": 0.332183567929549,
+          "p_value": 0.0,
+          "drift_detected": "True",
+          "effect_size": 0.332183567929549
+        },
+        "size_numeric": {
+          "ks_statistic": 0.11048813679130276,
+          "p_value": 2.230273735482716e-81,
+          "drift_detected": "True",
+          "effect_size": 0.11048813679130276
+        },
+        "recency_score": {
+          "ks_statistic": 0.5270854410006438,
+          "p_value": 0.0,
+          "drift_detected": "True",
+          "effect_size": 0.5270854410006438
+        },
+        "loyalty_score": {
+          "ks_statistic": 0.5270854410006438,
+          "p_value": 0.0,
+          "drift_detected": "True",
+          "effect_size": 0.5270854410006438
+        },
+        "sales_frequency": {
+          "ks_statistic": 0.2867185683485856,
+          "p_value": 0.0,
+          "drift_detected": "True",
+          "effect_size": 0.2867185683485856
+        },
+        "total_orders_y": {
+          "ks_statistic": 0.29134159874054155,
+          "p_value": 0.0,
+          "drift_detected": "True",
+          "effect_size": 0.29134159874054155
+        },
+        "customer_lifetime_days": {
+          "ks_statistic": 0.35439279655170647,
+          "p_value": 0.0,
+          "drift_detected": "True",
+          "effect_size": 0.35439279655170647
+        },
+        "sub_category_encoded": {
+          "ks_statistic": 0.09223390497089776,
+          "p_value": 8.514286198051649e-57,
+          "drift_detected": "True",
+          "effect_size": 0.09223390497089776
+        },
+        "week_min": {
+          "ks_statistic": 0.5270854410006438,
+          "p_value": 0.0,
+          "drift_detected": "True",
+          "effect_size": 0.5270854410006438
+        },
+        "items_bebidas_carbonatadas": {
+          "ks_statistic": 0.2388978063106273,
+          "p_value": 0.0,
+          "drift_detected": "True",
+          "effect_size": 0.2388978063106273
+        },
+        "is_seasonal_buyer": {
+          "ks_statistic": 0.3653673026726495,
+          "p_value": 0.0,
+          "drift_detected": "True",
+          "effect_size": 0.3653673026726495
+        },
+        "zone_id_encoded": {
+          "ks_statistic": 0.0,
+          "p_value": 1.0,
+          "drift_detected": "True",
+          "effect_size": 0.0
+        },
+        "avg_items_per_order": {
+          "ks_statistic": 0.1337929146910959,
+          "p_value": 2.836707843175101e-119,
+          "drift_detected": "True",
+          "effect_size": 0.1337929146910959
+        },
+        "segment_encoded": {
+          "ks_statistic": 0.08427745283083743,
+          "p_value": 1.7737087467928268e-47,
+          "drift_detected": "True",
+          "effect_size": 0.08427745283083743
+        },
+        "size": {
+          "ks_statistic": 0.11048813679130276,
+          "p_value": 2.230273735482716e-81,
+          "drift_detected": "True",
+          "effect_size": 0.11048813679130276
+        },
+        "total_items": {
+          "ks_statistic": 0.2388978063106273,
+          "p_value": 0.0,
+          "drift_detected": "True",
+          "effect_size": 0.2388978063106273
+        },
+        "preferred_day_of_week": {
+          "ks_statistic": 0.4229138997854929,
+          "p_value": 0.0,
+          "drift_detected": "True",
+          "effect_size": 0.4229138997854929
+        },
+        "interaction_frequency": {
+          "ks_statistic": 0.5270854410006438,
+          "p_value": 0.0,
+          "drift_detected": "True",
+          "effect_size": 0.5270854410006438
+        },
+        "std_items_per_transaction_x": {
+          "ks_statistic": 0.10066858350905455,
+          "p_value": 1.339123722641061e-67,
+          "drift_detected": "True",
+          "effect_size": 0.10066858350905455
+        },
+        "weekend_purchase_ratio": {
+          "ks_statistic": 0.17510323928919846,
+          "p_value": 1.4324116384605255e-204,
+          "drift_detected": "True",
+          "effect_size": 0.17510323928919846
+        },
+        "customer_penetration": {
+          "ks_statistic": 0.30195749759488444,
+          "p_value": 0.0,
+          "drift_detected": "True",
+          "effect_size": 0.30195749759488444
+        },
+        "zone_id": {
+          "ks_statistic": 0.0,
+          "p_value": 1.0,
+          "drift_detected": "True",
+          "effect_size": 0.0
+        },
+        "days_since_last_interaction": {
+          "ks_statistic": 0.5249177420906181,
+          "p_value": 0.0,
+          "drift_detected": "True",
+          "effect_size": 0.5249177420906181
+        },
+        "days_since_last_sale": {
+          "ks_statistic": 0.1315575181242215,
+          "p_value": 2.545530994205982e-115,
+          "drift_detected": "True",
+          "effect_size": 0.1315575181242215
+        },
+        "days_since_last_purchase": {
+          "ks_statistic": 0.08068008453438125,
+          "p_value": 1.530028830261217e-43,
+          "drift_detected": "True",
+          "effect_size": 0.08068008453438125
+        },
+        "avg_items_per_transaction_x": {
+          "ks_statistic": 0.11876237460150962,
+          "p_value": 5.398727051724679e-94,
+          "drift_detected": "True",
+          "effect_size": 0.11876237460150962
+        },
+        "avg_days_between_interactions": {
+          "ks_statistic": 0.5271774119378276,
+          "p_value": 0.0,
+          "drift_detected": "True",
+          "effect_size": 0.5271774119378276
+        }
+      },
+      "chi2_test_results": {
+        "customer_type": {
+          "chi2_statistic": 405.64293910768833,
+          "p_value": 1.710941957178705e-84,
+          "degrees_of_freedom": 6,
+          "cramers_v": 0.1057922611240142,
+          "drift_detected": "True"
+        },
+        "first_interaction": {
+          "chi2_statistic": 2745.817570909888,
+          "p_value": 0.0,
+          "degrees_of_freedom": 350,
+          "cramers_v": 0.3004685831581154,
+          "drift_detected": "True"
+        },
+        "package": {
+          "chi2_statistic": 397.92387204862723,
+          "p_value": 3.907770732133868e-87,
+          "degrees_of_freedom": 2,
+          "cramers_v": 0.10478085455727212,
+          "drift_detected": "True"
+        },
+        "brand": {
+          "chi2_statistic": 3645.6281118848724,
+          "p_value": 0.0,
+          "degrees_of_freedom": 20,
+          "cramers_v": 0.31715248703097454,
+          "drift_detected": "True"
+        },
+        "last_interaction": {
+          "chi2_statistic": 881.9265884857427,
+          "p_value": 9.433360704731142e-50,
+          "degrees_of_freedom": 340,
+          "cramers_v": 0.1705302749820492,
+          "drift_detected": "True"
+        },
+        "segment": {
+          "chi2_statistic": 467.04120676131333,
+          "p_value": 6.619651391597021e-101,
+          "degrees_of_freedom": 3,
+          "cramers_v": 0.11351664291537117,
+          "drift_detected": "True"
+        },
+        "sub_category": {
+          "chi2_statistic": 1912.2135582904486,
+          "p_value": 0.0,
+          "degrees_of_freedom": 1,
+          "cramers_v": 0.2296942564546447,
+          "drift_detected": "True"
+        }
+      },
+      "significant_drifts": [
+        {
+          "feature": "active_sale_days",
+          "test_type": "ks_test",
+          "p_value": 1.0499684948457123e-233,
+          "effect_size": 0.1870903718550908
+        },
+        {
+          "feature": "unique_orders",
+          "test_type": "ks_test",
+          "p_value": 0.0,
+          "effect_size": 0.5270854410006438
+        },
+        {
+          "feature": "interaction_days",
+          "test_type": "ks_test",
+          "p_value": 0.0,
+          "effect_size": 0.5270854410006438
+        },
+        {
+          "feature": "unique_products_bought",
+          "test_type": "ks_test",
+          "p_value": 0.0,
+          "effect_size": 0.22870325332246055
+        },
+        {
+          "feature": "location_distance_from_origin",
+          "test_type": "ks_test",
+          "p_value": 1.78516629172477e-07,
+          "effect_size": 0.03262948396698906
+        },
+        {
+          "feature": "total_items_bought",
+          "test_type": "ks_test",
+          "p_value": 0.0,
+          "effect_size": 0.5270854410006438
+        },
+        {
+          "feature": "preferred_month",
+          "test_type": "ks_test",
+          "p_value": 0.0,
+          "effect_size": 0.5270854410006438
+        },
+        {
+          "feature": "week_max",
+          "test_type": "ks_test",
+          "p_value": 0.0,
+          "effect_size": 0.5270854410006438
+        },
+        {
+          "feature": "total_orders_x",
+          "test_type": "ks_test",
+          "p_value": 0.0,
+          "effect_size": 0.2491572656734059
+        },
+        {
+          "feature": "std_items_per_transaction_y",
+          "test_type": "ks_test",
+          "p_value": 5.099982469285904e-258,
+          "effect_size": 0.19651809073699467
+        },
+        {
+          "feature": "product_lifetime_days",
+          "test_type": "ks_test",
+          "p_value": 1.0091648803571265e-130,
+          "effect_size": 0.14006289222885016
+        },
+        {
+          "feature": "Y",
+          "test_type": "ks_test",
+          "p_value": 4.6885181088256576e-36,
+          "effect_size": 0.0733493581209056
+        },
+        {
+          "feature": "orders_bebidas_carbonatadas",
+          "test_type": "ks_test",
+          "p_value": 0.0,
+          "effect_size": 0.2491572656734059
+        },
+        {
+          "feature": "seasonal_span_weeks",
+          "test_type": "ks_test",
+          "p_value": 0.0,
+          "effect_size": 0.5270854410006438
+        },
+        {
+          "feature": "days_since_first_interaction",
+          "test_type": "ks_test",
+          "p_value": 0.0,
+          "effect_size": 0.5272036934913567
+        },
+        {
+          "feature": "active_days",
+          "test_type": "ks_test",
+          "p_value": 0.0,
+          "effect_size": 0.2491572656734059
+        },
+        {
+          "feature": "customer_type_encoded",
+          "test_type": "ks_test",
+          "p_value": 2.6767547685399398e-24,
+          "effect_size": 0.060048619134008385
+        },
+        {
+          "feature": "purchase_frequency",
+          "test_type": "ks_test",
+          "p_value": 3.7502892119171625e-36,
+          "effect_size": 0.07344901414684557
+        },
+        {
+          "feature": "unique_customers",
+          "test_type": "ks_test",
+          "p_value": 0.0,
+          "effect_size": 0.30195749759488444
+        },
+        {
+          "feature": "total_transactions",
+          "test_type": "ks_test",
+          "p_value": 0.0,
+          "effect_size": 0.24649352328451213
+        },
+        {
+          "feature": "avg_items_per_transaction_y",
+          "test_type": "ks_test",
+          "p_value": 8.383956150448056e-179,
+          "effect_size": 0.1637500685450104
+        },
+        {
+          "feature": "days_since_first_sale",
+          "test_type": "ks_test",
+          "p_value": 3.40023240303055e-167,
+          "effect_size": 0.15836286120247944
+        },
+        {
+          "feature": "product_diversity",
+          "test_type": "ks_test",
+          "p_value": 0.0,
+          "effect_size": 0.22772736305178176
+        },
+        {
+          "feature": "brand_encoded",
+          "test_type": "ks_test",
+          "p_value": 2.1459672615394434e-115,
+          "effect_size": 0.13159980786263098
+        },
+        {
+          "feature": "days_since_first_purchase",
+          "test_type": "ks_test",
+          "p_value": 0.0,
+          "effect_size": 0.3626170377844965
+        },
+        {
+          "feature": "X",
+          "test_type": "ks_test",
+          "p_value": 1.2097632488287437e-05,
+          "effect_size": 0.02807162095265936
+        },
+        {
+          "feature": "package_encoded",
+          "test_type": "ks_test",
+          "p_value": 4.1905404577139236e-18,
+          "effect_size": 0.051676276815780575
+        },
+        {
+          "feature": "week_nunique",
+          "test_type": "ks_test",
+          "p_value": 0.0,
+          "effect_size": 0.5270854410006438
+        },
+        {
+          "feature": "total_items_sold",
+          "test_type": "ks_test",
+          "p_value": 0.0,
+          "effect_size": 0.2987006294809075
+        },
+        {
+          "feature": "interaction_span_days",
+          "test_type": "ks_test",
+          "p_value": 0.0,
+          "effect_size": 0.5270854410006438
+        },
+        {
+          "feature": "num_deliver_per_week",
+          "test_type": "ks_test",
+          "p_value": 2.2119193853069722e-07,
+          "effect_size": 0.03241322846942724
+        },
+        {
+          "feature": "avg_items_per_interaction",
+          "test_type": "ks_test",
+          "p_value": 0.0,
+          "effect_size": 0.5270854410006438
+        },
+        {
+          "feature": "std_items_per_interaction",
+          "test_type": "ks_test",
+          "p_value": 0.0,
+          "effect_size": 0.332183567929549
+        },
+        {
+          "feature": "size_numeric",
+          "test_type": "ks_test",
+          "p_value": 2.230273735482716e-81,
+          "effect_size": 0.11048813679130276
+        },
+        {
+          "feature": "recency_score",
+          "test_type": "ks_test",
+          "p_value": 0.0,
+          "effect_size": 0.5270854410006438
+        },
+        {
+          "feature": "loyalty_score",
+          "test_type": "ks_test",
+          "p_value": 0.0,
+          "effect_size": 0.5270854410006438
+        },
+        {
+          "feature": "sales_frequency",
+          "test_type": "ks_test",
+          "p_value": 0.0,
+          "effect_size": 0.2867185683485856
+        },
+        {
+          "feature": "total_orders_y",
+          "test_type": "ks_test",
+          "p_value": 0.0,
+          "effect_size": 0.29134159874054155
+        },
+        {
+          "feature": "customer_lifetime_days",
+          "test_type": "ks_test",
+          "p_value": 0.0,
+          "effect_size": 0.35439279655170647
+        },
+        {
+          "feature": "sub_category_encoded",
+          "test_type": "ks_test",
+          "p_value": 8.514286198051649e-57,
+          "effect_size": 0.09223390497089776
+        },
+        {
+          "feature": "week_min",
+          "test_type": "ks_test",
+          "p_value": 0.0,
+          "effect_size": 0.5270854410006438
+        },
+        {
+          "feature": "items_bebidas_carbonatadas",
+          "test_type": "ks_test",
+          "p_value": 0.0,
+          "effect_size": 0.2388978063106273
+        },
+        {
+          "feature": "is_seasonal_buyer",
+          "test_type": "ks_test",
+          "p_value": 0.0,
+          "effect_size": 0.3653673026726495
+        },
+        {
+          "feature": "avg_items_per_order",
+          "test_type": "ks_test",
+          "p_value": 2.836707843175101e-119,
+          "effect_size": 0.1337929146910959
+        },
+        {
+          "feature": "segment_encoded",
+          "test_type": "ks_test",
+          "p_value": 1.7737087467928268e-47,
+          "effect_size": 0.08427745283083743
+        },
+        {
+          "feature": "size",
+          "test_type": "ks_test",
+          "p_value": 2.230273735482716e-81,
+          "effect_size": 0.11048813679130276
+        },
+        {
+          "feature": "total_items",
+          "test_type": "ks_test",
+          "p_value": 0.0,
+          "effect_size": 0.2388978063106273
+        },
+        {
+          "feature": "preferred_day_of_week",
+          "test_type": "ks_test",
+          "p_value": 0.0,
+          "effect_size": 0.4229138997854929
+        },
+        {
+          "feature": "interaction_frequency",
+          "test_type": "ks_test",
+          "p_value": 0.0,
+          "effect_size": 0.5270854410006438
+        },
+        {
+          "feature": "std_items_per_transaction_x",
+          "test_type": "ks_test",
+          "p_value": 1.339123722641061e-67,
+          "effect_size": 0.10066858350905455
+        },
+        {
+          "feature": "weekend_purchase_ratio",
+          "test_type": "ks_test",
+          "p_value": 1.4324116384605255e-204,
+          "effect_size": 0.17510323928919846
+        },
+        {
+          "feature": "customer_penetration",
+          "test_type": "ks_test",
+          "p_value": 0.0,
+          "effect_size": 0.30195749759488444
+        },
+        {
+          "feature": "days_since_last_interaction",
+          "test_type": "ks_test",
+          "p_value": 0.0,
+          "effect_size": 0.5249177420906181
+        },
+        {
+          "feature": "days_since_last_sale",
+          "test_type": "ks_test",
+          "p_value": 2.545530994205982e-115,
+          "effect_size": 0.1315575181242215
+        },
+        {
+          "feature": "days_since_last_purchase",
+          "test_type": "ks_test",
+          "p_value": 1.530028830261217e-43,
+          "effect_size": 0.08068008453438125
+        },
+        {
+          "feature": "avg_items_per_transaction_x",
+          "test_type": "ks_test",
+          "p_value": 5.398727051724679e-94,
+          "effect_size": 0.11876237460150962
+        },
+        {
+          "feature": "avg_days_between_interactions",
+          "test_type": "ks_test",
+          "p_value": 0.0,
+          "effect_size": 0.5271774119378276
+        },
+        {
+          "feature": "customer_type",
+          "test_type": "chi2_test",
+          "p_value": 1.710941957178705e-84,
+          "effect_size": 0.1057922611240142
+        },
+        {
+          "feature": "first_interaction",
+          "test_type": "chi2_test",
+          "p_value": 0.0,
+          "effect_size": 0.3004685831581154
+        },
+        {
+          "feature": "package",
+          "test_type": "chi2_test",
+          "p_value": 3.907770732133868e-87,
+          "effect_size": 0.10478085455727212
+        },
+        {
+          "feature": "brand",
+          "test_type": "chi2_test",
+          "p_value": 0.0,
+          "effect_size": 0.31715248703097454
+        },
+        {
+          "feature": "last_interaction",
+          "test_type": "chi2_test",
+          "p_value": 9.433360704731142e-50,
+          "effect_size": 0.1705302749820492
+        },
+        {
+          "feature": "segment",
+          "test_type": "chi2_test",
+          "p_value": 6.619651391597021e-101,
+          "effect_size": 0.11351664291537117
+        },
+        {
+          "feature": "sub_category",
+          "test_type": "chi2_test",
+          "p_value": 0.0,
+          "effect_size": 0.2296942564546447
+        }
+      ],
+      "p_value_threshold": 0.05
+    },
+    "psi_results": {
+      "psi_scores": {
+        "active_sale_days": {
+          "psi_score": 0.2503124097703497,
+          "drift_level": "high_drift",
+          "drift_detected": true
+        },
+        "unique_orders": {
+          "psi_score": 0.04776603767503908,
+          "drift_level": "no_drift",
+          "drift_detected": false
+        },
+        "interaction_days": {
+          "psi_score": 0.04776603767503908,
+          "drift_level": "no_drift",
+          "drift_detected": false
+        },
+        "unique_products_bought": {
+          "psi_score": 0.32476862258950373,
+          "drift_level": "high_drift",
+          "drift_detected": true
+        },
+        "location_distance_from_origin": {
+          "psi_score": 0.011886469057744029,
+          "drift_level": "no_drift",
+          "drift_detected": false
+        },
+        "total_items_bought": {
+          "psi_score": 0.04982681693412418,
+          "drift_level": "no_drift",
+          "drift_detected": false
+        },
+        "preferred_month": {
+          "psi_score": 0.21073575316569593,
+          "drift_level": "medium_drift",
+          "drift_detected": true
+        },
+        "week_max": {
+          "psi_score": 0.07983199625069057,
+          "drift_level": "no_drift",
+          "drift_detected": false
+        },
+        "total_orders_x": {
+          "psi_score": 0.44437966218495345,
+          "drift_level": "high_drift",
+          "drift_detected": true
+        },
+        "region_id_encoded": {
+          "psi_score": 0.0,
+          "drift_level": "no_drift",
+          "drift_detected": false
+        },
+        "std_items_per_transaction_y": {
+          "psi_score": 0.30757022837092945,
+          "drift_level": "high_drift",
+          "drift_detected": true
+        },
+        "product_lifetime_days": {
+          "psi_score": 0.08828769736218411,
+          "drift_level": "no_drift",
+          "drift_detected": false
+        },
+        "Y": {
+          "psi_score": 0.036449311048335445,
+          "drift_level": "no_drift",
+          "drift_detected": false
+        },
+        "num_visit_per_week": {
+          "psi_score": 0.0,
+          "drift_level": "no_drift",
+          "drift_detected": false
+        },
+        "region_id": {
+          "psi_score": 0.0,
+          "drift_level": "no_drift",
+          "drift_detected": false
+        },
+        "orders_bebidas_carbonatadas": {
+          "psi_score": 0.44437966218495345,
+          "drift_level": "high_drift",
+          "drift_detected": true
+        },
+        "seasonal_span_weeks": {
+          "psi_score": 0.10716343777099008,
+          "drift_level": "low_drift",
+          "drift_detected": true
+        },
+        "days_since_first_interaction": {
+          "psi_score": 1.6252573441950309,
+          "drift_level": "high_drift",
+          "drift_detected": true
+        },
+        "active_days": {
+          "psi_score": 0.44437966218495345,
+          "drift_level": "high_drift",
+          "drift_detected": true
+        },
+        "customer_type_encoded": {
+          "psi_score": 0.017569301663309805,
+          "drift_level": "no_drift",
+          "drift_detected": false
+        },
+        "purchase_frequency": {
+          "psi_score": 0.04938794276242618,
+          "drift_level": "no_drift",
+          "drift_detected": false
+        },
+        "unique_customers": {
+          "psi_score": 0.5811044554243077,
+          "drift_level": "high_drift",
+          "drift_detected": true
+        },
+        "total_transactions": {
+          "psi_score": 0.4798766161773048,
+          "drift_level": "high_drift",
+          "drift_detected": true
+        },
+        "avg_items_per_transaction_y": {
+          "psi_score": 0.24895851376776365,
+          "drift_level": "medium_drift",
+          "drift_detected": true
+        },
+        "days_since_first_sale": {
+          "psi_score": 0.10488354799456975,
+          "drift_level": "low_drift",
+          "drift_detected": true
+        },
+        "product_diversity": {
+          "psi_score": 0.27779888020298754,
+          "drift_level": "high_drift",
+          "drift_detected": true
+        },
+        "brand_encoded": {
+          "psi_score": 0.18465765230887898,
+          "drift_level": "low_drift",
+          "drift_detected": true
+        },
+        "days_since_first_purchase": {
+          "psi_score": 0.8046759616979363,
+          "drift_level": "high_drift",
+          "drift_detected": true
+        },
+        "X": {
+          "psi_score": 0.01882195524578255,
+          "drift_level": "no_drift",
+          "drift_detected": false
+        },
+        "unique_categories_bought": {
+          "psi_score": 0.0,
+          "drift_level": "no_drift",
+          "drift_detected": false
+        },
+        "package_encoded": {
+          "psi_score": 0.0,
+          "drift_level": "no_drift",
+          "drift_detected": false
+        },
+        "week_nunique": {
+          "psi_score": 0.05553866289107872,
+          "drift_level": "no_drift",
+          "drift_detected": false
+        },
+        "total_items_sold": {
+          "psi_score": 0.52560323635632,
+          "drift_level": "high_drift",
+          "drift_detected": true
+        },
+        "interaction_span_days": {
+          "psi_score": 0.1487379740481924,
+          "drift_level": "low_drift",
+          "drift_detected": true
+        },
+        "num_deliver_per_week": {
+          "psi_score": 0.10086154082986469,
+          "drift_level": "low_drift",
+          "drift_detected": true
+        },
+        "category_encoded": {
+          "psi_score": 0.0,
+          "drift_level": "no_drift",
+          "drift_detected": false
+        },
+        "avg_items_per_interaction": {
+          "psi_score": 0.02780712263032812,
+          "drift_level": "no_drift",
+          "drift_detected": false
+        },
+        "std_items_per_interaction": {
+          "psi_score": 0.36669018235627276,
+          "drift_level": "high_drift",
+          "drift_detected": true
+        },
+        "size_numeric": {
+          "psi_score": 0.13053688255544266,
+          "drift_level": "low_drift",
+          "drift_detected": true
+        },
+        "recency_score": {
+          "psi_score": 0.08044089685115732,
+          "drift_level": "no_drift",
+          "drift_detected": false
+        },
+        "loyalty_score": {
+          "psi_score": 0.05745673001712262,
+          "drift_level": "no_drift",
+          "drift_detected": false
+        },
+        "sales_frequency": {
+          "psi_score": 0.49380309357297336,
+          "drift_level": "high_drift",
+          "drift_detected": true
+        },
+        "total_orders_y": {
+          "psi_score": 0.540341399889225,
+          "drift_level": "high_drift",
+          "drift_detected": true
+        },
+        "customer_lifetime_days": {
+          "psi_score": 0.757364829943752,
+          "drift_level": "high_drift",
+          "drift_detected": true
+        },
+        "sub_category_encoded": {
+          "psi_score": 0.0,
+          "drift_level": "no_drift",
+          "drift_detected": false
+        },
+        "week_min": {
+          "psi_score": 0.32039288773919317,
+          "drift_level": "high_drift",
+          "drift_detected": true
+        },
+        "items_bebidas_carbonatadas": {
+          "psi_score": 0.37340103296473,
+          "drift_level": "high_drift",
+          "drift_detected": true
+        },
+        "is_seasonal_buyer": {
+          "psi_score": 0.0,
+          "drift_level": "no_drift",
+          "drift_detected": false
+        },
+        "zone_id_encoded": {
+          "psi_score": 0.0,
+          "drift_level": "no_drift",
+          "drift_detected": false
+        },
+        "avg_items_per_order": {
+          "psi_score": 0.13778211475945534,
+          "drift_level": "low_drift",
+          "drift_detected": true
+        },
+        "segment_encoded": {
+          "psi_score": 0.0042677719660820755,
+          "drift_level": "no_drift",
+          "drift_detected": false
+        },
+        "size": {
+          "psi_score": 0.13053688255544266,
+          "drift_level": "low_drift",
+          "drift_detected": true
+        },
+        "total_items": {
+          "psi_score": 0.37340103296473,
+          "drift_level": "high_drift",
+          "drift_detected": true
+        },
+        "preferred_day_of_week": {
+          "psi_score": 0.8008628810731298,
+          "drift_level": "high_drift",
+          "drift_detected": true
+        },
+        "interaction_frequency": {
+          "psi_score": 0.04637587056278625,
+          "drift_level": "no_drift",
+          "drift_detected": false
+        },
+        "std_items_per_transaction_x": {
+          "psi_score": 0.06574934983959917,
+          "drift_level": "no_drift",
+          "drift_detected": false
+        },
+        "weekend_purchase_ratio": {
+          "psi_score": 0.11941727486575089,
+          "drift_level": "low_drift",
+          "drift_detected": true
+        },
+        "customer_penetration": {
+          "psi_score": 0.5811044554243077,
+          "drift_level": "high_drift",
+          "drift_detected": true
+        },
+        "zone_id": {
+          "psi_score": 0.0,
+          "drift_level": "no_drift",
+          "drift_detected": false
+        },
+        "days_since_last_interaction": {
+          "psi_score": 1.4566841005087388,
+          "drift_level": "high_drift",
+          "drift_detected": true
+        },
+        "days_since_last_sale": {
+          "psi_score": 0.11858191242967878,
+          "drift_level": "low_drift",
+          "drift_detected": true
+        },
+        "days_since_last_purchase": {
+          "psi_score": 0.032501300786270206,
+          "drift_level": "no_drift",
+          "drift_detected": false
+        },
+        "avg_items_per_transaction_x": {
+          "psi_score": 0.07996761247232363,
+          "drift_level": "no_drift",
+          "drift_detected": false
+        },
+        "avg_days_between_interactions": {
+          "psi_score": 0.0422635067278785,
+          "drift_level": "no_drift",
+          "drift_detected": false
+        }
+      },
+      "psi_threshold_low": 0.1,
+      "psi_threshold_medium": 0.2,
+      "psi_threshold_high": 0.25,
+      "features_with_drift": [
+        {
+          "feature": "active_sale_days",
+          "psi_score": 0.2503124097703497,
+          "drift_level": "high_drift"
+        },
+        {
+          "feature": "unique_products_bought",
+          "psi_score": 0.32476862258950373,
+          "drift_level": "high_drift"
+        },
+        {
+          "feature": "preferred_month",
+          "psi_score": 0.21073575316569593,
+          "drift_level": "medium_drift"
+        },
+        {
+          "feature": "total_orders_x",
+          "psi_score": 0.44437966218495345,
+          "drift_level": "high_drift"
+        },
+        {
+          "feature": "std_items_per_transaction_y",
+          "psi_score": 0.30757022837092945,
+          "drift_level": "high_drift"
+        },
+        {
+          "feature": "orders_bebidas_carbonatadas",
+          "psi_score": 0.44437966218495345,
+          "drift_level": "high_drift"
+        },
+        {
+          "feature": "seasonal_span_weeks",
+          "psi_score": 0.10716343777099008,
+          "drift_level": "low_drift"
+        },
+        {
+          "feature": "days_since_first_interaction",
+          "psi_score": 1.6252573441950309,
+          "drift_level": "high_drift"
+        },
+        {
+          "feature": "active_days",
+          "psi_score": 0.44437966218495345,
+          "drift_level": "high_drift"
+        },
+        {
+          "feature": "unique_customers",
+          "psi_score": 0.5811044554243077,
+          "drift_level": "high_drift"
+        },
+        {
+          "feature": "total_transactions",
+          "psi_score": 0.4798766161773048,
+          "drift_level": "high_drift"
+        },
+        {
+          "feature": "avg_items_per_transaction_y",
+          "psi_score": 0.24895851376776365,
+          "drift_level": "medium_drift"
+        },
+        {
+          "feature": "days_since_first_sale",
+          "psi_score": 0.10488354799456975,
+          "drift_level": "low_drift"
+        },
+        {
+          "feature": "product_diversity",
+          "psi_score": 0.27779888020298754,
+          "drift_level": "high_drift"
+        },
+        {
+          "feature": "brand_encoded",
+          "psi_score": 0.18465765230887898,
+          "drift_level": "low_drift"
+        },
+        {
+          "feature": "days_since_first_purchase",
+          "psi_score": 0.8046759616979363,
+          "drift_level": "high_drift"
+        },
+        {
+          "feature": "total_items_sold",
+          "psi_score": 0.52560323635632,
+          "drift_level": "high_drift"
+        },
+        {
+          "feature": "interaction_span_days",
+          "psi_score": 0.1487379740481924,
+          "drift_level": "low_drift"
+        },
+        {
+          "feature": "num_deliver_per_week",
+          "psi_score": 0.10086154082986469,
+          "drift_level": "low_drift"
+        },
+        {
+          "feature": "std_items_per_interaction",
+          "psi_score": 0.36669018235627276,
+          "drift_level": "high_drift"
+        },
+        {
+          "feature": "size_numeric",
+          "psi_score": 0.13053688255544266,
+          "drift_level": "low_drift"
+        },
+        {
+          "feature": "sales_frequency",
+          "psi_score": 0.49380309357297336,
+          "drift_level": "high_drift"
+        },
+        {
+          "feature": "total_orders_y",
+          "psi_score": 0.540341399889225,
+          "drift_level": "high_drift"
+        },
+        {
+          "feature": "customer_lifetime_days",
+          "psi_score": 0.757364829943752,
+          "drift_level": "high_drift"
+        },
+        {
+          "feature": "week_min",
+          "psi_score": 0.32039288773919317,
+          "drift_level": "high_drift"
+        },
+        {
+          "feature": "items_bebidas_carbonatadas",
+          "psi_score": 0.37340103296473,
+          "drift_level": "high_drift"
+        },
+        {
+          "feature": "avg_items_per_order",
+          "psi_score": 0.13778211475945534,
+          "drift_level": "low_drift"
+        },
+        {
+          "feature": "size",
+          "psi_score": 0.13053688255544266,
+          "drift_level": "low_drift"
+        },
+        {
+          "feature": "total_items",
+          "psi_score": 0.37340103296473,
+          "drift_level": "high_drift"
+        },
+        {
+          "feature": "preferred_day_of_week",
+          "psi_score": 0.8008628810731298,
+          "drift_level": "high_drift"
+        },
+        {
+          "feature": "weekend_purchase_ratio",
+          "psi_score": 0.11941727486575089,
+          "drift_level": "low_drift"
+        },
+        {
+          "feature": "customer_penetration",
+          "psi_score": 0.5811044554243077,
+          "drift_level": "high_drift"
+        },
+        {
+          "feature": "days_since_last_interaction",
+          "psi_score": 1.4566841005087388,
+          "drift_level": "high_drift"
+        },
+        {
+          "feature": "days_since_last_sale",
+          "psi_score": 0.11858191242967878,
+          "drift_level": "low_drift"
+        }
+      ]
+    },
+    "distribution_tests": {
+      "mean_shift_tests": {
+        "active_sale_days": {
+          "t_statistic": 37.21459230202733,
+          "p_value": 1.6214509970224543e-297,
+          "cohens_d": -0.4265675747000952,
+          "mean_change_pct": -24.25517998426844,
+          "drift_detected": "True"
+        },
+        "unique_orders": {
+          "t_statistic": 42.4943615620816,
+          "p_value": 0.0,
+          "cohens_d": -0.4870862645183034,
+          "mean_change_pct": -66.18790511516369,
+          "drift_detected": "True"
+        },
+        "interaction_days": {
+          "t_statistic": 42.4943615620816,
+          "p_value": 0.0,
+          "cohens_d": -0.4870862645183034,
+          "mean_change_pct": -66.18790511516369,
+          "drift_detected": "True"
+        },
+        "unique_products_bought": {
+          "t_statistic": 45.91775000975931,
+          "p_value": 0.0,
+          "cohens_d": -0.5263264232047293,
+          "mean_change_pct": -27.26238261755726,
+          "drift_detected": "True"
+        },
+        "location_distance_from_origin": {
+          "t_statistic": 1.015524199910803,
+          "p_value": 0.30986279616924156,
+          "cohens_d": -0.011640318171149414,
+          "mean_change_pct": -0.0027340778119529724,
+          "drift_detected": "True"
+        },
+        "total_items_bought": {
+          "t_statistic": 16.11665760980624,
+          "p_value": 3.1077674146512077e-58,
+          "cohens_d": -0.18473515692693385,
+          "mean_change_pct": -77.11773542041479,
+          "drift_detected": "True"
+        },
+        "preferred_month": {
+          "t_statistic": 56.02642879256995,
+          "p_value": 0.0,
+          "cohens_d": -0.6421958799170348,
+          "mean_change_pct": -40.612706000893496,
+          "drift_detected": "True"
+        },
+        "week_max": {
+          "t_statistic": 82.53531009827383,
+          "p_value": 0.0,
+          "cohens_d": -0.9460505913918876,
+          "mean_change_pct": -47.4632470621291,
+          "drift_detected": "True"
+        },
+        "total_orders_x": {
+          "t_statistic": 52.06724297374926,
+          "p_value": 0.0,
+          "cohens_d": -0.5968142113818847,
+          "mean_change_pct": -31.85245262428508,
+          "drift_detected": "True"
+        },
+        "region_id_encoded": {
+          "t_statistic": NaN,
+          "p_value": NaN,
+          "cohens_d": 0.0,
+          "mean_change_pct": 0,
+          "drift_detected": "True"
+        },
+        "std_items_per_transaction_y": {
+          "t_statistic": 24.197611956016942,
+          "p_value": 2.4662557114461383e-128,
+          "cohens_d": -0.2773620778065025,
+          "mean_change_pct": -22.35310345070421,
+          "drift_detected": "True"
+        },
+        "product_lifetime_days": {
+          "t_statistic": 19.654715482996405,
+          "p_value": 1.4719597720923956e-85,
+          "cohens_d": -0.2252896994533365,
+          "mean_change_pct": -10.132426427918189,
+          "drift_detected": "True"
+        },
+        "Y": {
+          "t_statistic": 5.708700751037265,
+          "p_value": 1.1472934496720156e-08,
+          "cohens_d": -0.06543526298220172,
+          "mean_change_pct": 0.291896085407367,
+          "drift_detected": "True"
+        },
+        "num_visit_per_week": {
+          "t_statistic": NaN,
+          "p_value": NaN,
+          "cohens_d": 0.0,
+          "mean_change_pct": 0.0,
+          "drift_detected": "True"
+        },
+        "region_id": {
+          "t_statistic": NaN,
+          "p_value": NaN,
+          "cohens_d": 0.0,
+          "mean_change_pct": 0.0,
+          "drift_detected": "True"
+        },
+        "orders_bebidas_carbonatadas": {
+          "t_statistic": 52.06724297374926,
+          "p_value": 0.0,
+          "cohens_d": -0.5968142113818847,
+          "mean_change_pct": -31.85245262428508,
+          "drift_detected": "True"
+        },
+        "seasonal_span_weeks": {
+          "t_statistic": 62.59580216603151,
+          "p_value": 0.0,
+          "cohens_d": -0.7174964943769228,
+          "mean_change_pct": -65.77193512790205,
+          "drift_detected": "True"
+        },
+        "days_since_first_interaction": {
+          "t_statistic": 120.57400633184204,
+          "p_value": 0.0,
+          "cohens_d": -1.3820643535585875,
+          "mean_change_pct": -66.6204434728201,
+          "drift_detected": "True"
+        },
+        "active_days": {
+          "t_statistic": 52.06724297374926,
+          "p_value": 0.0,
+          "cohens_d": -0.5968142113818847,
+          "mean_change_pct": -31.85245262428508,
+          "drift_detected": "True"
+        },
+        "customer_type_encoded": {
+          "t_statistic": 11.712573080017282,
+          "p_value": 1.253215833863739e-31,
+          "cohens_d": -0.1342538929808031,
+          "mean_change_pct": -20.14044881043762,
+          "drift_detected": "True"
+        },
+        "purchase_frequency": {
+          "t_statistic": 9.74955405791182,
+          "p_value": 1.974312304982329e-22,
+          "cohens_d": -0.11175303480791743,
+          "mean_change_pct": -6.384357916721983,
+          "drift_detected": "True"
+        },
+        "unique_customers": {
+          "t_statistic": 56.74010225041258,
+          "p_value": 0.0,
+          "cohens_d": -0.6503762719946655,
+          "mean_change_pct": -37.731466050169004,
+          "drift_detected": "True"
+        },
+        "total_transactions": {
+          "t_statistic": 49.13274799252148,
+          "p_value": 0.0,
+          "cohens_d": -0.5631779324471898,
+          "mean_change_pct": -45.28645791024382,
+          "drift_detected": "True"
+        },
+        "avg_items_per_transaction_y": {
+          "t_statistic": 24.527504159651357,
+          "p_value": 8.95536398317684e-132,
+          "cohens_d": -0.28114342561960587,
+          "mean_change_pct": -13.306428640394216,
+          "drift_detected": "True"
+        },
+        "days_since_first_sale": {
+          "t_statistic": 17.629445937438113,
+          "p_value": 2.8517493813800567e-69,
+          "cohens_d": -0.20207530249981398,
+          "mean_change_pct": -6.678202444800305,
+          "drift_detected": "True"
+        },
+        "product_diversity": {
+          "t_statistic": -47.50798551102529,
+          "p_value": 0.0,
+          "cohens_d": 0.5445542972459578,
+          "mean_change_pct": 40.886016586962306,
+          "drift_detected": "True"
+        },
+        "brand_encoded": {
+          "t_statistic": 16.69392214839949,
+          "p_value": 2.482351819441698e-62,
+          "cohens_d": -0.19135197895711034,
+          "mean_change_pct": -7.539708860315798,
+          "drift_detected": "True"
+        },
+        "days_since_first_purchase": {
+          "t_statistic": 95.3404129100013,
+          "p_value": 0.0,
+          "cohens_d": -1.0928274687483108,
+          "mean_change_pct": -18.638972460361593,
+          "drift_detected": "True"
+        },
+        "X": {
+          "t_statistic": -5.442155652062933,
+          "p_value": 5.298029818569906e-08,
+          "cohens_d": 0.062380023373638724,
+          "mean_change_pct": -0.12018124569147087,
+          "drift_detected": "True"
+        },
+        "unique_categories_bought": {
+          "t_statistic": NaN,
+          "p_value": NaN,
+          "cohens_d": 0.0,
+          "mean_change_pct": 0.0,
+          "drift_detected": "True"
+        },
+        "package_encoded": {
+          "t_statistic": 7.683397882161922,
+          "p_value": 1.5881710246801056e-14,
+          "cohens_d": -0.08806998000811397,
+          "mean_change_pct": -9.975391042125905,
+          "drift_detected": "True"
+        },
+        "week_nunique": {
+          "t_statistic": 49.44616027174165,
+          "p_value": 0.0,
+          "cohens_d": -0.5667703812033971,
+          "mean_change_pct": -65.6227334907014,
+          "drift_detected": "True"
+        },
+        "total_items_sold": {
+          "t_statistic": 24.29723414989181,
+          "p_value": 2.2801404793774775e-129,
+          "cohens_d": -0.27850398464999604,
+          "mean_change_pct": -41.63523960184284,
+          "drift_detected": "True"
+        },
+        "interaction_span_days": {
+          "t_statistic": 62.51889965589254,
+          "p_value": 0.0,
+          "cohens_d": -0.7166150090452525,
+          "mean_change_pct": -68.39196196042312,
+          "drift_detected": "True"
+        },
+        "num_deliver_per_week": {
+          "t_statistic": 6.733772998268086,
+          "p_value": 1.677823219536101e-11,
+          "cohens_d": -0.07718502444256864,
+          "mean_change_pct": -1.0003089544588841,
+          "drift_detected": "True"
+        },
+        "category_encoded": {
+          "t_statistic": NaN,
+          "p_value": NaN,
+          "cohens_d": 0.0,
+          "mean_change_pct": 0,
+          "drift_detected": "True"
+        },
+        "avg_items_per_interaction": {
+          "t_statistic": 22.755189088538977,
+          "p_value": 8.020620193611739e-114,
+          "cohens_d": -0.2608284874535991,
+          "mean_change_pct": -60.47762015476742,
+          "drift_detected": "True"
+        },
+        "std_items_per_interaction": {
+          "t_statistic": 15.4381064256003,
+          "p_value": 1.3445494002553668e-53,
+          "cohens_d": -0.1769573494849633,
+          "mean_change_pct": -63.224607226647954,
+          "drift_detected": "True"
+        },
+        "size_numeric": {
+          "t_statistic": -15.165890546831408,
+          "p_value": 8.582339229773168e-52,
+          "cohens_d": 0.17383710927760315,
+          "mean_change_pct": 49.088887876808954,
+          "drift_detected": "True"
+        },
+        "recency_score": {
+          "t_statistic": 22.399565886663137,
+          "p_value": 2.2362917672590867e-110,
+          "cohens_d": -0.25675220131562104,
+          "mean_change_pct": -44.41186062946154,
+          "drift_detected": "True"
+        },
+        "loyalty_score": {
+          "t_statistic": 8.420708753242488,
+          "p_value": 3.8777910662783466e-17,
+          "cohens_d": -0.0965213129563381,
+          "mean_change_pct": -87.19256140347119,
+          "drift_detected": "True"
+        },
+        "sales_frequency": {
+          "t_statistic": 35.30298660687043,
+          "p_value": 1.9036704379020017e-268,
+          "cohens_d": -0.40465603530855526,
+          "mean_change_pct": -39.25912469135978,
+          "drift_detected": "True"
+        },
+        "total_orders_y": {
+          "t_statistic": 30.018123166142573,
+          "p_value": 1.4242146571644335e-195,
+          "cohens_d": -0.3440789540863146,
+          "mean_change_pct": -41.25285945790964,
+          "drift_detected": "True"
+        },
+        "customer_lifetime_days": {
+          "t_statistic": 89.25075464232665,
+          "p_value": 0.0,
+          "cohens_d": -1.0230255282376568,
+          "mean_change_pct": -19.986197809021753,
+          "drift_detected": "True"
+        },
+        "sub_category_encoded": {
+          "t_statistic": 44.9627385431539,
+          "p_value": 0.0,
+          "cohens_d": -0.5153797246136379,
+          "mean_change_pct": -9.291877394443476,
+          "drift_detected": "True"
+        },
+        "week_min": {
+          "t_statistic": 24.664278909158877,
+          "p_value": 3.256073681615774e-133,
+          "cohens_d": -0.28271118895029423,
+          "mean_change_pct": -27.281004357611536,
+          "drift_detected": "True"
+        },
+        "items_bebidas_carbonatadas": {
+          "t_statistic": 29.390128225427116,
+          "p_value": 1.1784203547100034e-187,
+          "cohens_d": -0.33688064121455635,
+          "mean_change_pct": -62.03801086569947,
+          "drift_detected": "True"
+        },
+        "is_seasonal_buyer": {
+          "t_statistic": 71.64339426815107,
+          "p_value": 0.0,
+          "cohens_d": -0.8212033787236478,
+          "mean_change_pct": -47.784596299333934,
+          "drift_detected": "True"
+        },
+        "zone_id_encoded": {
+          "t_statistic": NaN,
+          "p_value": NaN,
+          "cohens_d": 0.0,
+          "mean_change_pct": 0,
+          "drift_detected": "True"
+        },
+        "avg_items_per_order": {
+          "t_statistic": 24.532658976597308,
+          "p_value": 7.906330036371136e-132,
+          "cohens_d": -0.28120251205926944,
+          "mean_change_pct": -39.543198320779624,
+          "drift_detected": "True"
+        },
+        "segment_encoded": {
+          "t_statistic": -2.9760395899055387,
+          "p_value": 0.0029218986603789703,
+          "cohens_d": 0.03411247877645873,
+          "mean_change_pct": 2.153843919648166,
+          "drift_detected": "True"
+        },
+        "size": {
+          "t_statistic": -15.165890546831408,
+          "p_value": 8.582339229773168e-52,
+          "cohens_d": 0.17383710927760315,
+          "mean_change_pct": 49.088887876808954,
+          "drift_detected": "True"
+        },
+        "total_items": {
+          "t_statistic": 29.390128225427116,
+          "p_value": 1.1784203547100034e-187,
+          "cohens_d": -0.33688064121455635,
+          "mean_change_pct": -62.03801086569947,
+          "drift_detected": "True"
+        },
+        "preferred_day_of_week": {
+          "t_statistic": 59.619613856335455,
+          "p_value": 0.0,
+          "cohens_d": -0.683382310918606,
+          "mean_change_pct": -50.13725440889301,
+          "drift_detected": "True"
+        },
+        "interaction_frequency": {
+          "t_statistic": 42.18586439555792,
+          "p_value": 0.0,
+          "cohens_d": -0.4835501546220063,
+          "mean_change_pct": -66.0616013769262,
+          "drift_detected": "True"
+        },
+        "std_items_per_transaction_x": {
+          "t_statistic": 14.450450766294077,
+          "p_value": 3.3702418373796085e-47,
+          "cohens_d": -0.16563647094866596,
+          "mean_change_pct": -29.57969091738829,
+          "drift_detected": "True"
+        },
+        "weekend_purchase_ratio": {
+          "t_statistic": 17.072927112130834,
+          "p_value": 4.245597935045415e-65,
+          "cohens_d": -0.19569627559392638,
+          "mean_change_pct": -37.92878155188451,
+          "drift_detected": "True"
+        },
+        "customer_penetration": {
+          "t_statistic": 56.740102250412534,
+          "p_value": 0.0,
+          "cohens_d": -0.6503762719946649,
+          "mean_change_pct": -37.73146605016898,
+          "drift_detected": "True"
+        },
+        "zone_id": {
+          "t_statistic": NaN,
+          "p_value": NaN,
+          "cohens_d": 0.0,
+          "mean_change_pct": 0.0,
+          "drift_detected": "True"
+        },
+        "days_since_last_interaction": {
+          "t_statistic": 61.54503720128931,
+          "p_value": 0.0,
+          "cohens_d": -0.7054522333797254,
+          "mean_change_pct": -64.48887752680041,
+          "drift_detected": "True"
+        },
+        "days_since_last_sale": {
+          "t_statistic": -7.961810093840121,
+          "p_value": 1.7445142761287559e-15,
+          "cohens_d": 0.091261244900622,
+          "mean_change_pct": 18.66550165210646,
+          "drift_detected": "True"
+        },
+        "days_since_last_purchase": {
+          "t_statistic": -8.339296093997369,
+          "p_value": 7.733968541159455e-17,
+          "cohens_d": 0.0955881306088807,
+          "mean_change_pct": 31.6798678397889,
+          "drift_detected": "True"
+        },
+        "avg_items_per_transaction_x": {
+          "t_statistic": 17.79878956900429,
+          "p_value": 1.4435091628260013e-70,
+          "cohens_d": -0.20401638253696264,
+          "mean_change_pct": -23.848990946553275,
+          "drift_detected": "True"
+        },
+        "avg_days_between_interactions": {
+          "t_statistic": 46.212841014195234,
+          "p_value": 0.0,
+          "cohens_d": -0.5297088666574604,
+          "mean_change_pct": -61.891612569013276,
+          "drift_detected": "True"
+        }
+      },
+      "variance_tests": {
+        "active_sale_days": {
+          "levene_statistic": 41.799621111842406,
+          "p_value": 1.0240662331293054e-10,
+          "variance_ratio": 1.1259109149136497,
+          "drift_detected": "True"
+        },
+        "unique_orders": {
+          "levene_statistic": 1034.9009436027984,
+          "p_value": 6.653546496462542e-224,
+          "variance_ratio": 0.2927466994137689,
+          "drift_detected": "True"
+        },
+        "interaction_days": {
+          "levene_statistic": 1034.9009436027984,
+          "p_value": 6.653546496462542e-224,
+          "variance_ratio": 0.2927466994137689,
+          "drift_detected": "True"
+        },
+        "unique_products_bought": {
+          "levene_statistic": 528.0740161429761,
+          "p_value": 5.017452905603812e-116,
+          "variance_ratio": 0.6359570481223678,
+          "drift_detected": "True"
+        },
+        "location_distance_from_origin": {
+          "levene_statistic": 10.877663214017673,
+          "p_value": 0.0009742467003931665,
+          "variance_ratio": 1.0762025438869185,
+          "drift_detected": "True"
+        },
+        "total_items_bought": {
+          "levene_statistic": 220.51223922030414,
+          "p_value": 9.796035444965704e-50,
+          "variance_ratio": 0.04741093164567499,
+          "drift_detected": "True"
+        },
+        "preferred_month": {
+          "levene_statistic": 150.61450309243153,
+          "p_value": 1.4904402420528209e-34,
+          "variance_ratio": 1.518313747139765,
+          "drift_detected": "True"
+        },
+        "week_max": {
+          "levene_statistic": 960.2557312408265,
+          "p_value": 4.10808955602961e-208,
+          "variance_ratio": 1.915273085486601,
+          "drift_detected": "True"
+        },
+        "total_orders_x": {
+          "levene_statistic": 402.14405997546015,
+          "p_value": 5.7216510655864796e-89,
+          "variance_ratio": 0.6515349596534298,
+          "drift_detected": "True"
+        },
+        "region_id_encoded": {
+          "levene_statistic": NaN,
+          "p_value": NaN,
+          "variance_ratio": 1,
+          "drift_detected": "True"
+        },
+        "std_items_per_transaction_y": {
+          "levene_statistic": 101.77836587952353,
+          "p_value": 6.677826677026526e-24,
+          "variance_ratio": 0.9088562742117502,
+          "drift_detected": "True"
+        },
+        "product_lifetime_days": {
+          "levene_statistic": 252.52021496161018,
+          "p_value": 1.1393948721777113e-56,
+          "variance_ratio": 1.1888918452869297,
+          "drift_detected": "True"
+        },
+        "Y": {
+          "levene_statistic": 31.17335008269437,
+          "p_value": 2.376707612254865e-08,
+          "variance_ratio": 4.376756486051735,
+          "drift_detected": "True"
+        },
+        "num_visit_per_week": {
+          "levene_statistic": NaN,
+          "p_value": NaN,
+          "variance_ratio": 1,
+          "drift_detected": "True"
+        },
+        "region_id": {
+          "levene_statistic": NaN,
+          "p_value": NaN,
+          "variance_ratio": 1,
+          "drift_detected": "True"
+        },
+        "orders_bebidas_carbonatadas": {
+          "levene_statistic": 402.14405997546015,
+          "p_value": 5.7216510655864796e-89,
+          "variance_ratio": 0.6515349596534298,
+          "drift_detected": "True"
+        },
+        "seasonal_span_weeks": {
+          "levene_statistic": 4073.4833198305787,
+          "p_value": 0.0,
+          "variance_ratio": 0.4804629906510154,
+          "drift_detected": "True"
+        },
+        "days_since_first_interaction": {
+          "levene_statistic": 206.09215550074518,
+          "p_value": 1.3136374461358977e-46,
+          "variance_ratio": 1.016684159051326,
+          "drift_detected": "True"
+        },
+        "active_days": {
+          "levene_statistic": 402.14405997546015,
+          "p_value": 5.7216510655864796e-89,
+          "variance_ratio": 0.6515349596534298,
+          "drift_detected": "True"
+        },
+        "customer_type_encoded": {
+          "levene_statistic": 137.18436815474553,
+          "p_value": 1.253215833870651e-31,
+          "variance_ratio": 0.7923944470375603,
+          "drift_detected": "True"
+        },
+        "purchase_frequency": {
+          "levene_statistic": 3.949360251986381,
+          "p_value": 0.046896704980287814,
+          "variance_ratio": 1.305038373038644,
+          "drift_detected": "True"
+        },
+        "unique_customers": {
+          "levene_statistic": 23.100753296004633,
+          "p_value": 1.5434554187008062e-06,
+          "variance_ratio": 1.1187665929753992,
+          "drift_detected": "True"
+        },
+        "total_transactions": {
+          "levene_statistic": 1387.3261299381707,
+          "p_value": 5.099582000624933e-298,
+          "variance_ratio": 0.30888536253096505,
+          "drift_detected": "True"
+        },
+        "avg_items_per_transaction_y": {
+          "levene_statistic": 1.6014624062196914,
+          "p_value": 0.2057042250943374,
+          "variance_ratio": 1.0518332244365722,
+          "drift_detected": "True"
+        },
+        "days_since_first_sale": {
+          "levene_statistic": 268.7698027933998,
+          "p_value": 3.4671529774879675e-60,
+          "variance_ratio": 1.306297134474643,
+          "drift_detected": "True"
+        },
+        "product_diversity": {
+          "levene_statistic": 1354.9961074497805,
+          "p_value": 2.998565574224914e-291,
+          "variance_ratio": 2.6752517416355563,
+          "drift_detected": "True"
+        },
+        "brand_encoded": {
+          "levene_statistic": 746.3523414419191,
+          "p_value": 1.114757948020532e-162,
+          "variance_ratio": 1.5788303379073922,
+          "drift_detected": "True"
+        },
+        "days_since_first_purchase": {
+          "levene_statistic": 9224.793345788008,
+          "p_value": 0.0,
+          "variance_ratio": 26.92982852448296,
+          "drift_detected": "True"
+        },
+        "X": {
+          "levene_statistic": 26.715142148592417,
+          "p_value": 2.370157357398225e-07,
+          "variance_ratio": 4.367108043126024,
+          "drift_detected": "True"
+        },
+        "unique_categories_bought": {
+          "levene_statistic": NaN,
+          "p_value": NaN,
+          "variance_ratio": 1,
+          "drift_detected": "True"
+        },
+        "package_encoded": {
+          "levene_statistic": 59.03460301561031,
+          "p_value": 1.5881710246921212e-14,
+          "variance_ratio": 0.9520926065996007,
+          "drift_detected": "True"
+        },
+        "week_nunique": {
+          "levene_statistic": 1312.075608701057,
+          "p_value": 2.9713188145871863e-282,
+          "variance_ratio": 0.34800385187865657,
+          "drift_detected": "True"
+        },
+        "total_items_sold": {
+          "levene_statistic": 388.15111958005076,
+          "p_value": 5.899931623071105e-86,
+          "variance_ratio": 0.6615409879023953,
+          "drift_detected": "True"
+        },
+        "interaction_span_days": {
+          "levene_statistic": 4924.373024050782,
+          "p_value": 0.0,
+          "variance_ratio": 0.40858858839939116,
+          "drift_detected": "True"
+        },
+        "num_deliver_per_week": {
+          "levene_statistic": 51.443232739378885,
+          "p_value": 7.510680227383338e-13,
+          "variance_ratio": 1.4459322009659783,
+          "drift_detected": "True"
+        },
+        "category_encoded": {
+          "levene_statistic": NaN,
+          "p_value": NaN,
+          "variance_ratio": 1,
+          "drift_detected": "True"
+        },
+        "avg_items_per_interaction": {
+          "levene_statistic": 92.04528573853588,
+          "p_value": 8.991858744257888e-22,
+          "variance_ratio": 0.9607254181809198,
+          "drift_detected": "True"
+        },
+        "std_items_per_interaction": {
+          "levene_statistic": 213.1261993240981,
+          "p_value": 3.914332067016619e-48,
+          "variance_ratio": 0.29037445778423077,
+          "drift_detected": "True"
+        },
+        "size_numeric": {
+          "levene_statistic": 224.14774338746614,
+          "p_value": 1.5956075139291254e-50,
+          "variance_ratio": 10.822557265745434,
+          "drift_detected": "True"
+        },
+        "recency_score": {
+          "levene_statistic": 360.52255643949667,
+          "p_value": 5.305977413766138e-80,
+          "variance_ratio": 0.6598866068407395,
+          "drift_detected": "True"
+        },
+        "loyalty_score": {
+          "levene_statistic": 70.40650061876302,
+          "p_value": 4.998537234234749e-17,
+          "variance_ratio": 0.009766464879736536,
+          "drift_detected": "True"
+        },
+        "sales_frequency": {
+          "levene_statistic": 469.77469816759776,
+          "p_value": 1.633309348579074e-103,
+          "variance_ratio": 0.7898293335532365,
+          "drift_detected": "True"
+        },
+        "total_orders_y": {
+          "levene_statistic": 541.4484518811921,
+          "p_value": 6.810185113159732e-119,
+          "variance_ratio": 0.7189401044023775,
+          "drift_detected": "True"
+        },
+        "customer_lifetime_days": {
+          "levene_statistic": 8158.786154562057,
+          "p_value": 0.0,
+          "variance_ratio": 8.663577704079444,
+          "drift_detected": "True"
+        },
+        "sub_category_encoded": {
+          "levene_statistic": 2021.6478573000213,
+          "p_value": 0.0,
+          "variance_ratio": 12.258689698675083,
+          "drift_detected": "True"
+        },
+        "week_min": {
+          "levene_statistic": 21.474913673612463,
+          "p_value": 3.5973443067108896e-06,
+          "variance_ratio": 1.1817150263159824,
+          "drift_detected": "True"
+        },
+        "items_bebidas_carbonatadas": {
+          "levene_statistic": 716.5590825013032,
+          "p_value": 2.4966836958054185e-156,
+          "variance_ratio": 0.18406792819830872,
+          "drift_detected": "True"
+        },
+        "is_seasonal_buyer": {
+          "levene_statistic": 1032.3653965692813,
+          "p_value": 2.285018040735187e-223,
+          "variance_ratio": 1.3327111787493413,
+          "drift_detected": "True"
+        },
+        "zone_id_encoded": {
+          "levene_statistic": NaN,
+          "p_value": NaN,
+          "variance_ratio": 1,
+          "drift_detected": "True"
+        },
+        "avg_items_per_order": {
+          "levene_statistic": 498.9526079614456,
+          "p_value": 8.86885196205437e-110,
+          "variance_ratio": 0.2886819208834166,
+          "drift_detected": "True"
+        },
+        "segment_encoded": {
+          "levene_statistic": 209.8764138386749,
+          "p_value": 1.9839544747335636e-47,
+          "variance_ratio": 1.170180765835323,
+          "drift_detected": "True"
+        },
+        "size": {
+          "levene_statistic": 224.14774338746614,
+          "p_value": 1.5956075139291254e-50,
+          "variance_ratio": 10.822557265745434,
+          "drift_detected": "True"
+        },
+        "total_items": {
+          "levene_statistic": 716.5590825013032,
+          "p_value": 2.4966836958054185e-156,
+          "variance_ratio": 0.18406792819830872,
+          "drift_detected": "True"
+        },
+        "preferred_day_of_week": {
+          "levene_statistic": 434.1251213012362,
+          "p_value": 7.512442417214603e-96,
+          "variance_ratio": 1.074566081437401,
+          "drift_detected": "True"
+        },
+        "interaction_frequency": {
+          "levene_statistic": 1020.8823276937742,
+          "p_value": 6.110485681295403e-221,
+          "variance_ratio": 0.2934765274324161,
+          "drift_detected": "True"
+        },
+        "std_items_per_transaction_x": {
+          "levene_statistic": 181.3407241282146,
+          "p_value": 3.1042763503040034e-41,
+          "variance_ratio": 0.5736771845570461,
+          "drift_detected": "True"
+        },
+        "weekend_purchase_ratio": {
+          "levene_statistic": 291.4848401761322,
+          "p_value": 4.245597935069415e-65,
+          "variance_ratio": 0.7642369625582943,
+          "drift_detected": "True"
+        },
+        "customer_penetration": {
+          "levene_statistic": 23.1007532960047,
+          "p_value": 1.5434554187008062e-06,
+          "variance_ratio": 1.1187665929753992,
+          "drift_detected": "True"
+        },
+        "zone_id": {
+          "levene_statistic": NaN,
+          "p_value": NaN,
+          "variance_ratio": 1,
+          "drift_detected": "True"
+        },
+        "days_since_last_interaction": {
+          "levene_statistic": 3957.8900957220767,
+          "p_value": 0.0,
+          "variance_ratio": 0.4959160946875532,
+          "drift_detected": "True"
+        },
+        "days_since_last_sale": {
+          "levene_statistic": 59.282566985589774,
+          "p_value": 1.4004257300552361e-14,
+          "variance_ratio": 1.3673653627910707,
+          "drift_detected": "True"
+        },
+        "days_since_last_purchase": {
+          "levene_statistic": 62.9704989596813,
+          "p_value": 2.1582354852415044e-15,
+          "variance_ratio": 1.4531118494626376,
+          "drift_detected": "True"
+        },
+        "avg_items_per_transaction_x": {
+          "levene_statistic": 276.8339679140248,
+          "p_value": 6.246245702196523e-62,
+          "variance_ratio": 0.5177682979688846,
+          "drift_detected": "True"
+        },
+        "avg_days_between_interactions": {
+          "levene_statistic": 1384.995681470379,
+          "p_value": 1.567812237807431e-297,
+          "variance_ratio": 0.4887054667477885,
+          "drift_detected": "True"
+        }
+      },
+      "normality_tests": {},
+      "significant_changes": [
+        {
+          "feature": "active_sale_days",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.4265675747000952
+        },
+        {
+          "feature": "unique_orders",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.4870862645183034
+        },
+        {
+          "feature": "interaction_days",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.4870862645183034
+        },
+        {
+          "feature": "unique_products_bought",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.5263264232047293
+        },
+        {
+          "feature": "location_distance_from_origin",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.011640318171149414
+        },
+        {
+          "feature": "total_items_bought",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.18473515692693385
+        },
+        {
+          "feature": "preferred_month",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.6421958799170348
+        },
+        {
+          "feature": "week_max",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.9460505913918876
+        },
+        {
+          "feature": "total_orders_x",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.5968142113818847
+        },
+        {
+          "feature": "std_items_per_transaction_y",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.2773620778065025
+        },
+        {
+          "feature": "product_lifetime_days",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.2252896994533365
+        },
+        {
+          "feature": "Y",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.06543526298220172
+        },
+        {
+          "feature": "orders_bebidas_carbonatadas",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.5968142113818847
+        },
+        {
+          "feature": "seasonal_span_weeks",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.7174964943769228
+        },
+        {
+          "feature": "days_since_first_interaction",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 1.3820643535585875
+        },
+        {
+          "feature": "active_days",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.5968142113818847
+        },
+        {
+          "feature": "customer_type_encoded",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.1342538929808031
+        },
+        {
+          "feature": "purchase_frequency",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.11175303480791743
+        },
+        {
+          "feature": "unique_customers",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.6503762719946655
+        },
+        {
+          "feature": "total_transactions",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.5631779324471898
+        },
+        {
+          "feature": "avg_items_per_transaction_y",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.28114342561960587
+        },
+        {
+          "feature": "days_since_first_sale",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.20207530249981398
+        },
+        {
+          "feature": "product_diversity",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.5445542972459578
+        },
+        {
+          "feature": "brand_encoded",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.19135197895711034
+        },
+        {
+          "feature": "days_since_first_purchase",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 1.0928274687483108
+        },
+        {
+          "feature": "X",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.062380023373638724
+        },
+        {
+          "feature": "package_encoded",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.08806998000811397
+        },
+        {
+          "feature": "week_nunique",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.5667703812033971
+        },
+        {
+          "feature": "total_items_sold",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.27850398464999604
+        },
+        {
+          "feature": "interaction_span_days",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.7166150090452525
+        },
+        {
+          "feature": "num_deliver_per_week",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.07718502444256864
+        },
+        {
+          "feature": "avg_items_per_interaction",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.2608284874535991
+        },
+        {
+          "feature": "std_items_per_interaction",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.1769573494849633
+        },
+        {
+          "feature": "size_numeric",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.17383710927760315
+        },
+        {
+          "feature": "recency_score",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.25675220131562104
+        },
+        {
+          "feature": "loyalty_score",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.0965213129563381
+        },
+        {
+          "feature": "sales_frequency",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.40465603530855526
+        },
+        {
+          "feature": "total_orders_y",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.3440789540863146
+        },
+        {
+          "feature": "customer_lifetime_days",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 1.0230255282376568
+        },
+        {
+          "feature": "sub_category_encoded",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.5153797246136379
+        },
+        {
+          "feature": "week_min",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.28271118895029423
+        },
+        {
+          "feature": "items_bebidas_carbonatadas",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.33688064121455635
+        },
+        {
+          "feature": "is_seasonal_buyer",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.8212033787236478
+        },
+        {
+          "feature": "avg_items_per_order",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.28120251205926944
+        },
+        {
+          "feature": "segment_encoded",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.03411247877645873
+        },
+        {
+          "feature": "size",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.17383710927760315
+        },
+        {
+          "feature": "total_items",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.33688064121455635
+        },
+        {
+          "feature": "preferred_day_of_week",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.683382310918606
+        },
+        {
+          "feature": "interaction_frequency",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.4835501546220063
+        },
+        {
+          "feature": "std_items_per_transaction_x",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.16563647094866596
+        },
+        {
+          "feature": "weekend_purchase_ratio",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.19569627559392638
+        },
+        {
+          "feature": "customer_penetration",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.6503762719946649
+        },
+        {
+          "feature": "days_since_last_interaction",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.7054522333797254
+        },
+        {
+          "feature": "days_since_last_sale",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.091261244900622
+        },
+        {
+          "feature": "days_since_last_purchase",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.0955881306088807
+        },
+        {
+          "feature": "avg_items_per_transaction_x",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.20401638253696264
+        },
+        {
+          "feature": "avg_days_between_interactions",
+          "mean_drift": "True",
+          "variance_drift": "True",
+          "effect_size": 0.5297088666574604
+        }
+      ]
+    },
+    "feature_importance_drift": {
+      "important_features_analyzed": [
+        "unique_products_bought",
+        "total_transactions",
+        "days_since_last_purchase",
+        "unique_customers",
+        "total_items_sold",
+        "customer_penetration",
+        "interaction_frequency",
+        "loyalty_score",
+        "recency_score"
+      ],
+      "features_with_drift": [
+        {
+          "feature": "unique_products_bought",
+          "ks_statistic": 0.22870325332246055,
+          "p_value": 0.0,
+          "mean_change_pct": -27.26238261755726
+        },
+        {
+          "feature": "total_transactions",
+          "ks_statistic": 0.24649352328451213,
+          "p_value": 0.0,
+          "mean_change_pct": -45.28645791024382
+        },
+        {
+          "feature": "days_since_last_purchase",
+          "ks_statistic": 0.08068008453438125,
+          "p_value": 1.530028830261217e-43,
+          "mean_change_pct": 31.6798678397889
+        },
+        {
+          "feature": "unique_customers",
+          "ks_statistic": 0.30195749759488444,
+          "p_value": 0.0,
+          "mean_change_pct": -37.731466050169004
+        },
+        {
+          "feature": "total_items_sold",
+          "ks_statistic": 0.2987006294809075,
+          "p_value": 0.0,
+          "mean_change_pct": -41.63523960184284
+        },
+        {
+          "feature": "customer_penetration",
+          "ks_statistic": 0.30195749759488444,
+          "p_value": 0.0,
+          "mean_change_pct": -37.73146605016898
+        },
+        {
+          "feature": "interaction_frequency",
+          "ks_statistic": 0.5270854410006438,
+          "p_value": 0.0,
+          "mean_change_pct": -66.0616013769262
+        },
+        {
+          "feature": "loyalty_score",
+          "ks_statistic": 0.5270854410006438,
+          "p_value": 0.0,
+          "mean_change_pct": -87.19256140347119
+        },
+        {
+          "feature": "recency_score",
+          "ks_statistic": 0.5270854410006438,
+          "p_value": 0.0,
+          "mean_change_pct": -44.41186062946154
+        }
+      ],
+      "overall_importance_drift_score": 0.3377498676459958
+    },
+    "drift_detected": true,
+    "drift_score": 3.443874933822998,
+    "confidence": "high",
+    "recommendation": "retrain_model",
+    "significant_tests": [
+      "active_sale_days",
+      "unique_orders",
+      "customer_type",
+      "interaction_days",
+      "unique_products_bought",
+      "location_distance_from_origin",
+      "total_items_bought",
+      "preferred_month",
+      "week_max",
+      "total_orders_x",
+      "std_items_per_transaction_y",
+      "product_lifetime_days",
+      "Y",
+      "orders_bebidas_carbonatadas",
+      "first_interaction",
+      "seasonal_span_weeks",
+      "days_since_first_interaction",
+      "active_days",
+      "customer_type_encoded",
+      "purchase_frequency",
+      "unique_customers",
+      "brand_encoded",
+      "total_transactions",
+      "avg_items_per_transaction_y",
+      "days_since_first_sale",
+      "week_nunique",
+      "product_diversity",
+      "package_encoded",
+      "days_since_first_purchase",
+      "X",
+      "weekend_purchase_ratio",
+      "brand",
+      "total_items_sold",
+      "interaction_span_days",
+      "package",
+      "num_deliver_per_week",
+      "avg_items_per_interaction",
+      "std_items_per_interaction",
+      "size_numeric",
+      "recency_score",
+      "last_interaction",
+      "loyalty_score",
+      "sales_frequency",
+      "total_orders_y",
+      "customer_lifetime_days",
+      "sub_category_encoded",
+      "week_min",
+      "is_seasonal_buyer",
+      "segment_encoded",
+      "avg_items_per_order",
+      "preferred_day_of_week",
+      "size",
+      "total_items",
+      "interaction_frequency",
+      "std_items_per_transaction_x",
+      "customer_penetration",
+      "avg_days_between_interactions",
+      "days_since_last_interaction",
+      "segment",
+      "days_since_last_sale",
+      "days_since_last_purchase",
+      "avg_items_per_transaction_x",
+      "sub_category",
+      "items_bebidas_carbonatadas"
+    ],
+    "decision_factors": [
+      "Tests estad\u00edsticos: 64 features con drift",
+      "PSI: 34 features con drift, PSI promedio: 0.421",
+      "Tests distribuci\u00f3n: 57 features con cambios",
+      "Features importantes: drift score 0.338"
+    ]
+  },
+  "training_results": {
+    "model_uri": "/opt/airflow/models/recommendation_model.pkl",
+    "best_params": {
+      "model_type": "logistic",
+      "C": 0.1,
+      "penalty": "l2"
+    },
+    "best_auc": 1.0,
+    "test_auc": 1.0,
+    "feature_names": [
+      "total_orders_x",
+      "unique_products_bought",
+      "avg_items_per_transaction_x",
+      "std_items_per_transaction_x",
+      "active_days",
+      "days_since_last_purchase",
+      "customer_lifetime_days",
+      "purchase_frequency",
+      "avg_items_per_order",
+      "product_diversity",
+      "region_id",
+      "zone_id",
+      "Y",
+      "X",
+      "items_bebidas_carbonatadas",
+      "orders_bebidas_carbonatadas",
+      "unique_categories_bought",
+      "location_distance_from_origin",
+      "customer_type_encoded",
+      "region_id_encoded",
+      "zone_id_encoded",
+      "unique_customers",
+      "total_orders_y",
+      "total_items_sold",
+      "avg_items_per_transaction_y",
+      "std_items_per_transaction_y",
+      "active_sale_days",
+      "days_since_first_sale",
+      "days_since_last_sale",
+      "product_lifetime_days",
+      "sales_frequency",
+      "customer_penetration",
+      "size",
+      "brand_encoded",
+      "category_encoded",
+      "sub_category_encoded",
+      "segment_encoded",
+      "package_encoded",
+      "size_numeric",
+      "total_items_bought",
+      "interaction_frequency",
+      "avg_items_per_interaction",
+      "std_items_per_interaction",
+      "unique_orders",
+      "interaction_days",
+      "days_since_first_interaction",
+      "days_since_last_interaction",
+      "interaction_span_days",
+      "avg_days_between_interactions",
+      "loyalty_score",
+      "recency_score",
+      "preferred_day_of_week",
+      "preferred_month",
+      "weekend_purchase_ratio",
+      "week_min",
+      "week_max",
+      "week_nunique",
+      "seasonal_span_weeks",
+      "is_seasonal_buyer",
+      "total_transactions",
+      "total_items",
+      "days_since_first_purchase",
+      "num_deliver_per_week",
+      "num_visit_per_week",
+      "customer_type_CANAL FRIO",
+      "customer_type_MAYORISTA",
+      "customer_type_MINIMARKET",
+      "customer_type_RESTAURANT",
+      "customer_type_SUPERMERCADO",
+      "customer_type_TIENDA DE CONVENIENCIA",
+      "brand_Brand 10",
+      "brand_Brand 14",
+      "brand_Brand 15",
+      "brand_Brand 16",
+      "brand_Brand 2",
+      "brand_Brand 21",
+      "brand_Brand 22",
+      "brand_Brand 24",
+      "brand_Brand 26",
+      "brand_Brand 3",
+      "brand_Brand 31",
+      "brand_Brand 33",
+      "brand_Brand 34",
+      "brand_Brand 35",
+      "brand_Brand 44",
+      "brand_Brand 52",
+      "brand_Brand 54",
+      "brand_Brand 7",
+      "sub_category_GASEOSAS",
+      "segment_LOW",
+      "segment_MEDIUM",
+      "segment_PREMIUM",
+      "package_KEG",
+      "package_LATA"
+    ],
+    "training_timestamp": "2025-11-13T19:57:01.532669"
+  },
+  "model_info": null,
+  "evaluation_results": {
+    "auc": 1.0,
+    "average_precision": 1.0,
+    "precision_at_k": {
+      "5": 1.0,
+      "10": 1.0,
+      "20": 1.0,
+      "50": 1.0
+    },
+    "recall_at_k": {
+      "5": 0.010080645161290322,
+      "10": 0.020161290322580645,
+      "20": 0.04032258064516129,
+      "50": 0.10080645161290322
+    },
+    "coverage": 1.0,
+    "model_uri": "/opt/airflow/models/recommendation_model.pkl",
+    "is_retrained": true
+  },
+  "interpretability": {
+    "top_features": [],
+    "feature_importance_scores": {},
+    "plots_generated": [],
+    "total_features_analyzed": 94,
+    "shap_analysis_completed": false,
+    "error": "Model type not yet supported by TreeExplainer: <class 'sklearn.linear_model._logistic.LogisticRegression'>",
+    "model_uri": "/opt/airflow/models/recommendation_model.pkl"
+  },
+  "prediction_results": {
+    "total_predictions": 25,
+    "total_recommendations": 25,
+    "unique_customers": 5,
+    "unique_products": 5,
+    "target_week": "2025-11-20",
+    "top_products": [
+      1304,
+      11262,
+      30500,
+      46632,
+      54096
+    ],
+    "avg_prediction_score": 0.9981896287704758,
+    "max_prediction_score": 0.9981896287704758,
+    "min_prediction_score": 0.9981896287704758,
+    "prediction_file": "/opt/airflow/data/predictions/predictions_demo_20251113_195800.parquet",
+    "execution_time_seconds": 1.565324,
+    "mode": "DEMO_OPTIMIZED",
+    "model_uri": "/opt/airflow/models/recommendation_model.pkl"
+  },
+  "logged_at": "2025-11-13T19:58:14.442739"
+}

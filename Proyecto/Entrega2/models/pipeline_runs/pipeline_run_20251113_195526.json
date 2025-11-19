@@ -1,0 +1,255 @@
+{
+  "run_id": "20251113_195526",
+  "data_stats": {
+    "extraction_timestamp": "2025-11-13T19:50:14.949609",
+    "data_path": "/opt/airflow/data",
+    "validation_passed": true,
+    "errors": [],
+    "transacciones": {
+      "shape": [
+        15000,
+        5
+      ],
+      "date_range": {
+        "start": "2024-01-01",
+        "end": "2024-12-31"
+      },
+      "unique_customers": 1406,
+      "unique_products": 102,
+      "unique_orders": 13148,
+      "avg_items_per_transaction": 4.422764444444445,
+      "records_removed": 0
+    },
+    "clientes": {
+      "shape": [
+        1569,
+        8
+      ],
+      "unique_customers": 1569,
+      "regions": 1,
+      "zones": 1,
+      "customer_types": 7,
+      "duplicates_removed": 0
+    },
+    "productos": {
+      "shape": [
+        971,
+        7
+      ],
+      "unique_products": 971,
+      "brands": 61,
+      "categories": 2,
+      "segments": 4,
+      "duplicates_removed": 0
+    },
+    "cross_validation": {
+      "missing_customers": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "missing_products": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "coverage": {
+        "customers_with_transactions": 1406,
+        "total_customers": 1569,
+        "products_with_transactions": 102,
+        "total_products": 971
+      }
+    }
+  },
+  "features_stats": {
+    "customer_features_shape": [
+      1406,
+      30
+    ],
+    "product_features_shape": [
+      102,
+      26
+    ],
+    "interaction_features_shape": [
+      8857,
+      16
+    ],
+    "temporal_features_shape": [
+      8857,
+      10
+    ],
+    "final_dataset_shape": [
+      10451,
+      97
+    ],
+    "num_features": 94,
+    "customer_product_pairs": 10451,
+    "positive_interactions": "8857",
+    "negative_interactions": "1594",
+    "preprocessing_applied": true,
+    "pipeline_saved": true
+  },
+  "drift_results": {
+    "detection_timestamp": "2025-11-13T19:50:52.597996",
+    "drift_detected": true,
+    "drift_score": 1.0,
+    "error": "No se pueden encontrar datos para crear baseline de referencia",
+    "message": "Error en detecci\u00f3n - asumiendo drift por seguridad"
+  },
+  "training_results": {
+    "model_uri": "/opt/airflow/models/recommendation_model.pkl",
+    "best_params": {
+      "model_type": "logistic",
+      "C": 0.1,
+      "penalty": "l2"
+    },
+    "best_auc": 1.0,
+    "test_auc": 1.0,
+    "feature_names": [
+      "total_orders_x",
+      "unique_products_bought",
+      "avg_items_per_transaction_x",
+      "std_items_per_transaction_x",
+      "active_days",
+      "days_since_last_purchase",
+      "customer_lifetime_days",
+      "purchase_frequency",
+      "avg_items_per_order",
+      "product_diversity",
+      "region_id",
+      "zone_id",
+      "Y",
+      "X",
+      "items_bebidas_carbonatadas",
+      "orders_bebidas_carbonatadas",
+      "unique_categories_bought",
+      "location_distance_from_origin",
+      "customer_type_encoded",
+      "region_id_encoded",
+      "zone_id_encoded",
+      "unique_customers",
+      "total_orders_y",
+      "total_items_sold",
+      "avg_items_per_transaction_y",
+      "std_items_per_transaction_y",
+      "active_sale_days",
+      "days_since_first_sale",
+      "days_since_last_sale",
+      "product_lifetime_days",
+      "sales_frequency",
+      "customer_penetration",
+      "size",
+      "brand_encoded",
+      "category_encoded",
+      "sub_category_encoded",
+      "segment_encoded",
+      "package_encoded",
+      "size_numeric",
+      "total_items_bought",
+      "interaction_frequency",
+      "avg_items_per_interaction",
+      "std_items_per_interaction",
+      "unique_orders",
+      "interaction_days",
+      "days_since_first_interaction",
+      "days_since_last_interaction",
+      "interaction_span_days",
+      "avg_days_between_interactions",
+      "loyalty_score",
+      "recency_score",
+      "preferred_day_of_week",
+      "preferred_month",
+      "weekend_purchase_ratio",
+      "week_min",
+      "week_max",
+      "week_nunique",
+      "seasonal_span_weeks",
+      "is_seasonal_buyer",
+      "total_transactions",
+      "total_items",
+      "days_since_first_purchase",
+      "num_deliver_per_week",
+      "num_visit_per_week",
+      "customer_type_CANAL FRIO",
+      "customer_type_MAYORISTA",
+      "customer_type_MINIMARKET",
+      "customer_type_RESTAURANT",
+      "customer_type_SUPERMERCADO",
+      "customer_type_TIENDA DE CONVENIENCIA",
+      "brand_Brand 10",
+      "brand_Brand 14",
+      "brand_Brand 15",
+      "brand_Brand 16",
+      "brand_Brand 2",
+      "brand_Brand 21",
+      "brand_Brand 22",
+      "brand_Brand 24",
+      "brand_Brand 26",
+      "brand_Brand 3",
+      "brand_Brand 31",
+      "brand_Brand 33",
+      "brand_Brand 34",
+      "brand_Brand 35",
+      "brand_Brand 44",
+      "brand_Brand 52",
+      "brand_Brand 54",
+      "brand_Brand 7",
+      "sub_category_GASEOSAS",
+      "segment_LOW",
+      "segment_MEDIUM",
+      "segment_PREMIUM",
+      "package_KEG",
+      "package_LATA"
+    ],
+    "training_timestamp": "2025-11-13T19:55:08.762240"
+  },
+  "model_info": null,
+  "evaluation_results": {
+    "auc": 1.0,
+    "average_precision": 1.0,
+    "precision_at_k": {
+      "5": 1.0,
+      "10": 1.0,
+      "20": 1.0,
+      "50": 1.0
+    },
+    "recall_at_k": {
+      "5": 0.010080645161290322,
+      "10": 0.020161290322580645,
+      "20": 0.04032258064516129,
+      "50": 0.10080645161290322
+    },
+    "coverage": 1.0,
+    "model_uri": "/opt/airflow/models/recommendation_model.pkl",
+    "is_retrained": true
+  },
+  "interpretability": {
+    "top_features": [],
+    "feature_importance_scores": {},
+    "plots_generated": [],
+    "total_features_analyzed": 94,
+    "shap_analysis_completed": false,
+    "error": "Model type not yet supported by TreeExplainer: <class 'sklearn.linear_model._logistic.LogisticRegression'>",
+    "model_uri": "/opt/airflow/models/recommendation_model.pkl"
+  },
+  "prediction_results": {
+    "total_predictions": 25,
+    "total_recommendations": 25,
+    "unique_customers": 5,
+    "unique_products": 5,
+    "target_week": "2025-11-20",
+    "top_products": [
+      1304,
+      11262,
+      30500,
+      46632,
+      54096
+    ],
+    "avg_prediction_score": 0.9981896287704758,
+    "max_prediction_score": 0.9981896287704758,
+    "min_prediction_score": 0.9981896287704758,
+    "prediction_file": "/opt/airflow/data/predictions/predictions_demo_20251113_195523.parquet",
+    "execution_time_seconds": 2.698348,
+    "mode": "DEMO_OPTIMIZED",
+    "model_uri": "/opt/airflow/models/recommendation_model.pkl"
+  },
+  "logged_at": "2025-11-13T19:55:26.240836"
+}
